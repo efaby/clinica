@@ -1,0 +1,3 @@
+.at-social-enews-effect-1 ul li div{padding: 0;margin: 5px;-webkit-transition: all 0.1s;-moz-transition: all 0.1s;-o-transition: all 0.1s;transition: all 0.1s;  background-size: cover;background-position: center;}
+.at-social-enews-effect-1 ul li:hover div{margin: 0;height: 100% !important;width: 100% !important;}
+

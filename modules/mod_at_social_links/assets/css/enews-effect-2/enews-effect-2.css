@@ -1,0 +1,11 @@
+.at-social-enews-effect-2 ul li div{
+	margin: 7px;
+	-webkit-transition: all 0.1s ease-in;-moz-transition: all 0.1s ease-in;-o-transition: all 0.1s ease-in;transition: all 0.1s ease-in;
+	-webkit-border-radius: 6px;-moz-border-radius: 6px;border-radius: 6px;}
+.at-social-enews-effect-2 ul li:hover div{
+	margin: 3px;
+	padding: 4px;
+	transform:rotate(10deg);
+	-ms-transform:rotate(10deg); /* IE 9 */
+	-webkit-transform:rotate(10deg);
+}

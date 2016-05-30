@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" method="upgrade">
+    <name>AT Social Links</name>
+    <author>Nam Chung Tran</author>
+    <version>1.0.0</version>
+	<creationDate>Dec 2013</creationDate>
+	<copyright>Amazing-Templates.com</copyright>
+	<license>License GNU General Public License version 2 or later</license>
+	<authorEmail>chungtn2910@gmail.com</authorEmail>
+	<authorUrl>www.amazing-templates.com</authorUrl>
+	<edition>Free</edition>
+    <description>AT_SOCIAL_LINKS</description>
+    <scriptfile>script.php</scriptfile>
+    <files>
+        <filename module="mod_at_social_links">mod_at_social_links.php</filename>
+        <filename>index.html</filename>
+        <filename>mod_at_social_links.xml</filename>
+        <filename>helper.php</filename>
+        <filename>defined.php</filename>
+        <filename>script.php</filename>
+        <folder>tmpl</folder>
+        <folder>assets</folder>
+        <folder>classes</folder>
+        <folder>fields</folder>
+    </files>
+    <languages>
+		<language tag="en-GB">en-GB.mod_at_social_links.ini</language>
+		<language tag="en-GB">en-GB.mod_at_social_links.sys.ini</language>
+	</languages>
+    <config>
+    	<fields name="params">
+    		<fieldset name="basic" label="AVATAR_MODULE_SETTING" addfieldpath="/modules/mod_at_social_links/fields/">
+    			<field name="moduleclass_sfx" type="text"  default="" label="AVATAR_SUFFIX" description="" />
+    			<field name="iconWidth" type="text" default="30px" label="AT_ICON_WIDTH" size="2" description="AT_ICON_SIZE_DESC"/>
+    			<field name="iconHeight" type="text" default="30px" label="AT_ICON_HEIGHT" size="2" description="AT_ICON_SIZE_DESC"/>
+    			<field name="effect" type="ateffectselector" default="true" label="AT_EFFECT" description="AT_EFFECT_SELECT" hide_none="true" hide_default="true" size="1"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_1_ICON"/>
+    			<field name="social_icon_1" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_1" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_2_ICON"/>
+    			<field name="social_icon_2" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_2" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_3_ICON"/>
+    			<field name="social_icon_3" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_3" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_4_ICON"/>
+    			<field name="social_icon_4" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_4" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_5_ICON"/>
+    			<field name="social_icon_5" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_5" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_6_ICON"/>
+    			<field name="social_icon_6" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_6" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_7_ICON"/>
+    			<field name="social_icon_7" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_7" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_8_ICON"/>
+    			<field name="social_icon_8" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_8" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_9_ICON"/>
+    			<field name="social_icon_9" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_9" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_10_ICON"/>
+    			<field name="social_icon_10" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_10" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_11_ICON"/>
+    			<field name="social_icon_11" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_11" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_12_ICON"/>
+    			<field name="social_icon_12" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_12" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_13_ICON"/>
+    			<field name="social_icon_13" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_13" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_14_ICON"/>
+    			<field name="social_icon_14" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_14" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_15_ICON"/>
+    			<field name="social_icon_15" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_15" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_16_ICON"/>
+    			<field name="social_icon_16" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_16" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_17_ICON"/>
+    			<field name="social_icon_17" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_17" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_18_ICON"/>
+    			<field name="social_icon_18" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_18" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_19_ICON"/>
+    			<field name="social_icon_19" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_19" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    			<field type="spacer" label="AT_SOCIAL_20_ICON"/>
+    			<field name="social_icon_20" type="socialiconlist" default="" label="AT_SOCIAL_ICON" description="AT_SOCIAL_ICON"/>
+    			<field name="social_link_20" type="text" default="" label="AT_SOCIAL_LINK" description="AT_SOCIAL_LINK"/>
+    			<field type="spacer" hr="true"/>
+    		</fieldset>
+    	</fields>	
+    </config>
+ 
+</extension>

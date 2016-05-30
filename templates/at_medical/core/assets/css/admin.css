@@ -1,0 +1,180 @@
+ul.at-template-about li{
+	padding: 5px 10px;
+	float: left;
+  	text-align: center;
+  	cursor: pointer;
+  	min-width: 100px;
+  	position: relative;
+}
+ul.at-template-about li:first-child,
+ul.at-template-about li:first-of-type{
+	margin-left: 0px;
+}
+ul.at-template-about li:first-child:after{
+	display: none;
+}
+ul.at-template-about li:nth-child(2n+1){
+	min-width: 70px;
+}
+ul.at-template-about li a, ul.at-template-about li a:hover{
+	text-decoration: none;
+}
+.at-template-about{
+	list-style: none;
+	margin: 0;
+	display: inline-block;
+}
+.form-horizontal ul.nav-tabs > li > a{
+	-webkit-border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	border-radius: 0 !important;
+	background-color: #d8d8d8;
+	color: #313131;
+	padding: 10px 20px;
+	border: none;
+}
+.controls .btn,
+.controls .btn-danger:hover,
+.controls .btn-danger:focus,
+.controls .btn-danger:active,
+.controls .btn-danger.disabled,
+.controls .btn-danger[disabled],
+.controls .btn:hover,
+.controls .btn:focus,
+.controls .btn:active,
+.controls .btn.disabled,
+.controls .btn[disabled],
+ul.at-template-about li:nth-child(2n),
+ul.at-template-about li:nth-child(2n) a{
+	background-color: #d8d8d8;
+	color: #313131;
+	background-image: none !important
+}
+.form-horizontal ul.nav-tabs > li.active > a,
+.controls .btn-success,
+.controls .btn-danger.active,
+ul.at-template-about li:nth-child(2n+1),
+ul.at-template-about li:nth-child(2n+1) a,
+.avatar-space{
+	background-color: #1a9fe2 !important;
+	color: #fff !important;
+	position: relative;	
+}
+ul.nav-tabs > li > a:hover,
+ul.nav-tabs > li > a:focus,
+ul.nav-tabs > .active > a,
+ul.nav-tabs > .active > a:hover,
+ul.nav-tabs > .active > a:focus,
+.controls .btn{
+	border: none;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+}
+.controls .btn{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.controls .radio.btn-group > label:first-of-type,
+.controls .btn-group > .btn:last-child,
+.controls .btn-group > .dropdown-toggle,
+.form-horizontal input, .form-horizontal textarea, .form-horizontal select, .form-horizontal .help-inline, .form-horizontal .uneditable-input, .form-horizontal .input-prepend, .form-horizontal .input-append{
+	-webkit-border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	border-radius: 0 !important;
+}
+.controls .btn-success:before,
+ul.at-template-about li:nth-child(2n+1):before{
+	border-width: 28px 28px 0 0;
+	border-color: #1a9fe2 transparent transparent transparent;
+  	right: -28px;
+  	z-index: 99;
+}
+.controls .btn-danger:before,
+ul.at-template-about li:nth-child(2n+1):after{
+	border-width: 0 0 28px 28px;
+	border-color: transparent transparent #1a9fe2 transparent;
+  	left: -28px;
+  	z-index: 99;
+}
+.controls label.btn-success:before,
+.controls label.btn-danger:before,
+.controls label.btn:after,
+ul.at-template-about li:nth-child(2n+1):after,
+ul.at-template-about li:nth-child(2n+1):before{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	position: absolute;
+  	content: "";
+  	top: 0;
+}
+.controls .radio.btn-group > label:first-of-type:after,
+.controls .radio.btn-group > label:first-child:after{
+	border-width: 28px 28px 0 0;
+	border-color: #d8d8d8 transparent transparent transparent;
+  	right: -28px;
+  	z-index: 98;
+}
+.controls .radio.btn-group > label:last-of-type:after,
+.controls .radio.btn-group > label:last-child:after{
+	border-width: 0 0 28px 28px;
+	border-color: transparent transparent #d8d8d8 transparent;
+  	left: -28px;
+  	z-index: 98;
+}
+.controls .radio.btn-group > label:first-of-type,.controls .radio.btn-group > label:first-child{
+	margin-right:14px;
+	padding-right:0px;
+}
+.controls .radio.btn-group > label:last-of-type,.controls .radio.btn-group > label:last-child{
+	margin-left:14px;
+	padding-left:0px;
+}
+.form-horizontal .controls .btn-group > .btn{
+	min-width: 85px;
+}
+.form-horizontal .at-font-field{
+	display: block;
+}
+.avatar-space{
+	font-weight: bold;
+	padding: 10px 30px 10px 10px;
+	text-transform: uppercase;
+	margin-left: -20px;
+}
+.form-horizontal .control-label label{
+	line-height: 28px;
+	margin-bottom: 0;
+}
+.form-horizontal .control-label{
+	padding-top: 0px;
+}
+.at-logo, .at-logo:hover{
+	font-weight: bold;
+	font-size: 40px;
+	line-height: 45px;
+	text-decoration: none;
+}
+.at-intro{
+	text-align: center;
+}
+.btn-groups{
+	position: relative;
+}
+.btn-groups:before{
+	position: absolute;
+  	content: "";
+  	top:0;
+  	bottom:0;
+  	left: 0;
+  	right: 0;
+  	z-index: 999999;
+  	cursor: not-allowed;
+}
+.chzn-container-single .chzn-single,
+.chzn-container-multi .chzn-choices li.search-choice{
+	-webkit-border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	border-radius: 0 !important;
+}

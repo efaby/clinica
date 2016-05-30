@@ -1,0 +1,245 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('fonts/oswald-light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: url('fonts/oswald-bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: url('fonts/oswald-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Segoe_UI';
+    src: url('fonts/segoeuil.woff') format('woff');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Segoe_UI';
+    src: url('fonts/segoeuib.woff') format('woff');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Segoe_UI';
+    src: url('fonts/segoeui.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Segoe_UI_sb';
+    src: url('fonts/segoeuisb.woff') format('woff');
+}
+body,body *{
+	font-family: Segoe_UI;
+}
+h1,h2,h3,h4,h5{
+	font-family: Oswald;
+}
+body{
+	color: #353535;
+}
+body{
+	font-size: 13px;
+}
+p{
+	line-height: 22px;
+}
+h1,h2,h3,h4,h5{
+	line-height: 100%;
+}
+h1{
+	font-size: 36px;
+	font-weight: lighter;
+}
+h2{
+	font-size: 30px;
+	font-weight: lighter;
+}
+h3{
+	font-size: 24px;
+	font-weight: normal;
+}
+h4{
+	font-size: 20px;
+	font-weight: normal;
+}
+h5{
+	font-size: 16px;
+	font-weight: normal;
+}
+/*----- link & link hover -----*/
+a,a:hover,a:link, a:visited{
+	text-decoration: none;
+	color: #313131;
+}
+.btn.active, .btn:active{
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+@media screen and (max-width: 480px) and (min-width: 0px){
+	.avatar-responsive h3{
+		font-size: 20px;
+	}
+	.avatar-responsive h1{
+		font-size: 32px;
+	}
+	.avatar-responsive h2{
+		font-size: 22px;
+	}
+}
+input:focus:invalid:focus, 
+textarea:focus:invalid:focus, 
+select:focus:invalid:focus {
+  border-color: transparent;
+  -webkit-box-shadow: 0 0 2px #C7C7C7;
+  -moz-box-shadow: 0 0 2px #C7C7C7;
+  box-shadow: 0 0 2px #C7C7C7;
+}
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input{
+	padding: 8px 8px;
+	background: #fff;
+	border: none;
+	color: #8F8F8F;
+	border: solid 1px #dbdbdb;
+	-webkit-box-shadow: none;
+  	-moz-box-shadow: none;
+  	box-shadow: none;
+}
+
+
+
+blockquote{
+	margin: 0;
+	padding: 20px 20px 20px 30px;
+	border: none;
+	font-style: italic;
+	position: relative;
+	font-size: 18px;
+}
+blockquote *{
+	font-family: Oswald;
+}
+blockquote:before{
+	position: absolute;
+	content: "\e977";
+	font-family: 'at-medical';
+	top: 0;
+	left: 0;
+}
+input.inputbox{
+	-webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus{
+	background: #fff;
+}
+textarea{
+	resize: none;
+}
+label{
+	font-family: Oswald;
+	font-size: 14px;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus
+{
+	border-color:rgba(82,168,236,0.8);
+	outline:0;outline:thin dotted \9;
+	-webkit-box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.075);
+	-moz-box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.075);
+	box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.075);
+}
+.chzn-container-single .chzn-single{
+	-webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+.form-horizontal .control-label{
+	text-align: left;
+}
+.table.table-striped>tbody>tr>td,
+.table.table-striped>tbody>tr>th,
+.table.table-striped>tfoot>tr>td,
+.table.table-striped>tfoot>tr>th,
+.table.table-striped>thead>tr>td,
+.table.table-striped>thead>tr>th,
+.table>tbody>tr>td,
+.table>tfoot>tr>td,
+.table>thead>tr>td{
+	border: none;
+}
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table>thead>tr>th{
+	border-bottom: 1px solid #ddd;
+	font-family: Oswald;
+	font-size: 14px;
+}
+.checkbox, .radio{
+	display: inline;
+}
+ul.the-arrow,ul.the-plus,ul.the-capsule,ul.the-doc{
+	list-style: none;
+}
+ul.the-arrow > li,
+ul.the-plus > li,
+ul.the-capsule > li,
+ul.the-doc > li{
+	position: relative;
+}
+ul.the-arrow > li:before,
+ul.the-plus > li:before,
+ul.the-capsule > li:before,
+ul.the-doc > li:before{
+	position: absolute;
+	font-family: "at-medical";
+	left: -20px;
+}
+ul.the-arrow > li:before{
+	content : "\e095";
+}
+ul.the-plus > li:before{
+	content: "\e645";
+}
+ul.the-capsule > li:before{
+	content: "\e634";
+}
+ul.the-doc > li:before{
+	content: "\e61c";
+}
+.text-drop-cap:first-letter{
+	font-size: 35px;
+	font-family: Oswald;
+	font-weight: bold;
+	float: left;
+	margin-top: 13px;
+	margin-right: 5px;
+}
+.pre-scrollable{
+	margin-bottom: 10px;
+}
+pre{
+	margin-bottom: 0;
+}

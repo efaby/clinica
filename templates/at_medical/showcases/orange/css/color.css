@@ -1,0 +1,139 @@
+.at-main-menu .at-menu-horizontal >li.active >span,
+.at-main-menu .at-menu-horizontal >li.active >a,
+.at-main-menu ul.at-menu-horizontal > li:hover >a,
+.at-main-menu ul.at-menu-horizontal > li:hover >span,
+.at-main-menu ul.at-menu-horizontal > li > a:hover, 
+.at-main-menu ul.at-menu-horizontal > li > span:hover,
+.at-logo, .at-logo *,.at-color,
+div.at-module[class^="at-icon-"]:before, div.at-module[class*=" at-icon-"]:before,
+.at-heading-color .at-module-heading ,
+.at-accordion-s1 .panel:hover > .panel-heading a,
+.at-accordion-s1 div.panel[class^="at-icon-"]:hover:before,
+.at-accordion-s1 div.panel[class*=" at-icon-"]:hover:before,
+.at-categories-list.at-accordion-s1 div.panel[class^="at-icon-"]:hover:before,
+.at-categories-list.at-accordion-s1 div.panel[class*=" at-icon-"]:hover:before,
+.at-accordion-s1 div.panel-heading:hover:before,
+.at-list-style-1,
+.at-list-style-1 li:before,
+.at-mod-contact [class^="at-icon-"]:before, .at-mod-contact [class*=" at-icon-"]:before,
+.at-main-menu .menu-pull:before,
+.slick-dots li button:hover:before,
+.slick-dots li.slick-active button:before,
+.at-medical-effect-2 .at-item-extra-info a:link,
+.at-medical-effect-2 .at-item-extra-info a:visited,
+.at-medical-effect-2 .at-item-extra-info a:hover,
+blockquote, blockquote *, blockquote:before,
+.at-tags span a:link,
+.at-tags span a:visited,
+.icons .btn.dropdown-toggle .at-icon-arrow-right:before,
+.at-blog-link a:hover,
+.at-blog-link li:hover:before,
+.categories-module li:after,
+.pagination_nav .page span,
+.categories-module li:before,
+.categories-module li a:link,
+.categories-module li a:visited,
+.tagscloud a:hover,
+.at-contact .contact-name,
+.at-contact .jicon-text,
+.at-contact .at-contact-form-title,
+.at-contact .contact-webpage a,
+.category-list tr:hover *,
+#avatar-footer-inside-block a:hover,
+#avatar-footer-inside-block [class^="at-icon-"]:before,
+#avatar-footer-inside-block [class*=" at-icon-"]:before,
+.at-module-5 .at-module-heading,
+.at-module-7 .at-module-heading,
+.at-contact-list.at-accordion-s1 div.panel:hover:before,
+.at-contact-list.at-accordion-s1 div.panel:hover:before,
+.at-item-page div.itemAuthorBlock div.itemAuthorDetails span.itemAuthorUrl,
+.at-item-page div.itemAuthorBlock div.itemAuthorDetails .itemAuthorEmail,
+.at-result-item .result-title a,
+.at-result-item .result-title a:link,
+.at-result-item .result-title a:hover,
+.searchintro .badge,
+.text-drop-cap:first-letter,
+sup,sub,cite,abbr{
+	color: #ff8706;
+}
+.at-menu-horizontal li ul li:hover:before,
+.at-form-module .control-group:nth-of-type(2n) label.control-label,
+.at-main-menu ul.at-menu-horizontal ul li.active:before{
+	background-color: #FFA748;
+}
+.at-main-menu .at-menu-horizontal ul,
+.at-logo .at-logo-icon,
+.at-mod-royal-slider.rsMinW .rsBullet.rsNavSelected span,
+.at-readmore-btn1,
+.at-showcase-caroucel-staff .at-caroucel-item .at-item-des-wrap:after,
+.at-showcase-caroucel-staff .at-caroucel-item:hover .at-item-des-wrap,
+div.at-showcase-caroucel-staff .at-item-image-wrap a,
+.at-form-module .control-group:nth-of-type(2n+1) label.control-label,
+.at-form-module button,
+.at-medical-effect-4 [class^="at-icon-"]:before, .at-medical-effect-4 [class*=" at-icon-"]:before,
+#avatar-full-4-block,
+.at-cus-btn-1,
+.btn,
+#avatar-pos-breadcrumbs,
+.at-mod-royal-slider .at-caption-b3 .at-caption-btn:after,
+.at-blog .at-readmore .btn:before,
+.tagspopular ul li:hover,
+.at-item-page .pager li>a,
+.at-categories-list .badge,
+.at-module-1 .at-module-heading,
+.at-module-2 .at-module-heading,
+.at-module-3 .at-module-heading,
+.at-module-4 .at-module-heading,
+.at-module-8 .at-module-heading,
+.at-module-7 .at-module-heading:after,
+.at-module-6 .at-module-heading div,
+.at-module-6 .at-module-heading:before,
+.at-custom-mod-1,
+.at-showcase-testimonial-1 .at-item-intro,
+.at-medical-effect-7 .at-showcase-item:hover,
+.at-userBlock,
+.at-item-page .itemToolbar,
+.at-item-page .itemAuthorName,
+.at-item-page div.itemCommentsForm form input.btn#submitCommentButton,
+div.k2TagCloudBlock a:hover,
+table.calendar tr td.calendarDateLinked a:hover,
+table.calendar tr td.calendarToday,
+.login .login-description{
+	background-color: #ff8706;
+	color: #fff;
+}
+.at-showcase-caroucel .slick-list,.at-readmore-btn1:hover,
+.at-medical-effect-1 .at-showcase-item-wrap,
+.at-medical-effect-3.at-medical-effect-6 .at-showcase-item .at-showcase-item-wrap:after,
+.at-medical-effect-3.at-medical-effect-6 .at-showcase-item .at-showcase-item-wrap:before,
+.table-striped>tbody>tr:nth-of-type(odd),
+.even{
+	background-color: rgba(255,135,6,0.95);
+	color: #fff;
+}
+.at-mod-royal-slider.rsMinW .rsBullet,
+.at-mod-royal-slider .at-caption-b3 .at-caption-btn:hover,
+.tagspopular ul li:hover{
+	border: 1px solid #ff8706;
+}
+.at-showcase-caroucel .slick-prev,
+.at-showcase-caroucel .slick-next,
+.at-showcase-caroucel-staff .slick-prev,
+.at-showcase-caroucel-staff .slick-next,
+.at-showcase-testimonial .slick-prev,
+.at-showcase-testimonial .slick-next{
+	background-color: rgba(255,135,6,0.95);
+}
+div.at-choose-us .row,
+div.at-showcase-testimonial .slick-list{
+	border-bottom-color: #ff8706;
+}
+.at-module-6 .at-module-heading div:before{
+	width: 0;
+	height: 0;
+	border-bottom: 60px solid #ff8706;
+	border-right: 60px solid transparent;
+}
+.at-showcase-testimonial-1 .at-item-intro:after{
+	border-top: 70px solid #ff8706;
+}

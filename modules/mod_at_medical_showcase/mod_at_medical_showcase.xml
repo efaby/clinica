@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0.0" method="upgrade">
+    <name>AT Medical Showcase</name>
+    <author>Nam Chung Tran</author>
+    <version>1.0.0</version>
+	<creationDate>May 2013</creationDate>
+	<copyright>Amazing-Templates.com</copyright>
+	<license>License GNU General Public License version 2 or later</license>
+	<authorEmail>chungtn2910@gmail.com</authorEmail>
+	<authorUrl>www.amazing-templates.com</authorUrl>
+	<edition>Pro</edition>
+    <description>AVATAR_TEMPLATES_SHOWCASE</description>
+    <files>
+        <filename module="mod_at_medical_showcase">mod_at_medical_showcase.php</filename>
+        <filename>index.html</filename>
+        <filename>mod_at_medical_showcase.xml</filename>
+        <filename>helper.php</filename>
+        <filename>defined.php</filename>
+        <folder>tmpl</folder>
+        <folder>assets</folder>
+        <folder>classes</folder>
+        <folder>fields</folder>
+    </files>
+    <languages>
+		<language tag="en-GB">en-GB.mod_at_medical_showcase.ini</language>
+		<language tag="en-GB">en-GB.mod_at_medical_showcase.sys.ini</language>
+	</languages>
+    <config>
+    	<fields name="params">
+    		<fieldset name="basic" label="AVATAR_MODULE_SETTING" addfieldpath="/modules/mod_at_medical_showcase/fields/">
+				<field name="moduleclass_sfx" type="text"  default="" label="AVATAR_SUFFIX" description="" />
+    			<field name="width" type="text" default="100%" label="AVATAR_WIDTH" size="2" description="AVATAR_WIDTH_DESC"/>
+    			<field name="height" type="text" default="0.5" label="AVATAR_HEIGHT" size="2" description="AVATAR_HEIGHT_DESC"/>
+    			<field name="negativePosition" type="text" default="0" label="AT_NEGATIVE_POSITION" size="2" description="AT_NEGATIVE_POSITION_DESC"/>
+    			<field name="jquery" type="text" default="latest" size="7" label="AVATAR_JQUERY" description="AVATAR_JQUERY_DESC"/>
+    			<field name="contentSource" type="atcomloader" default="default" label="AVATAR_SOURCE" description="AVATAR_SOURCE_DESC"/>
+    			<field name="showcase" type="avatarshowcaseselector" default="true" label="AVATAR_SHOWCASE_SELECT" description="AVATAR_SHOWCASE_SELECT_DESC" hide_none="true" hide_default="true" size="1"/>
+    		</fieldset>
+			<fieldset name="filtering" label="AVATAR_ARTICLES_SETTING">
+				<field name="show_front" type="radio" default="show" label="MOD_ARTICLES_CATEGORY_FIELD_SHOWFEATURED_LABEL" description="MOD_ARTICLES_CATEGORY_FIELD_SHOWFEATURED_DESC">
+					<option value="show">JSHOW</option>
+					<option value="hide">JHIDE</option>
+					<option value="only">MOD_ARTICLES_CATEGORY_OPTION_ONLYFEATURED_VALUE</option>
+				</field>
+				<field name="filteringspacer1" type="spacer" hr="true" />
+				<field name="category_filtering_type" type="radio" default="1" label="MOD_ARTICLES_CATEGORY_FIELD_CATFILTERINGTYPE_LABEL" description="MOD_ARTICLES_CATEGORY_FIELD_CATFILTERINGTYPE_DESC">
+					<option value="1">MOD_ARTICLES_CATEGORY_OPTION_INCLUSIVE_VALUE</option>
+					<option value="0">MOD_ARTICLES_CATEGORY_OPTION_EXCLUSIVE_VALUE</option>
+				</field>
+				<field name="catid" type="category" extension="com_content" multiple="true" size="5" label="JCATEGORY" description="MOD_ARTICLES_CATEGORY_FIELD_CATEGORY_DESC">
+					<option value="">JOPTION_ALL_CATEGORIES</option>
+				</field>
+				<field name="show_child_category_articles" type="radio" default="1" label="MOD_ARTICLES_CATEGORY_FIELD_SHOWCHILDCATEGORYARTICLES_LABEL" description="MOD_ARTICLES_CATEGORY_FIELD_SHOWCHILDCATEGORYARTICLES_DESC">
+					<option value="1">MOD_ARTICLES_CATEGORY_OPTION_INCLUDE_VALUE</option>
+					<option value="0">MOD_ARTICLES_CATEGORY_OPTION_EXCLUDE_VALUE</option>
+				</field>
+				<field name="levels" type="text" default="99" label="MOD_ARTICLES_CATEGORY_FIELD_CATDEPTH_LABEL" description="MOD_ARTICLES_CATEGORY_FIELD_CATDEPTH_DESC" />
+				<field name="filteringspacer2" type="spacer" hr="true" />
+				<field name="author_filtering_type" type="radio" default="1" label="MOD_ARTICLES_CATEGORY_FIELD_AUTHORFILTERING_LABEL" description="MOD_ARTICLES_CATEGORY_FIELD_AUTHORFILTERING_DESC">
+					<option value="1">MOD_ARTICLES_CATEGORY_OPTION_INCLUSIVE_VALUE</option>
+					<option value="0">MOD_ARTICLES_CATEGORY_OPTION_EXCLUSIVE_VALUE</option>
+				</field>
+				<field name="created_by" type="sql" multiple="true" size="5" label="MOD_ARTICLES_CATEGORY_FIELD_AUTHOR_LABEL" description="MOD_ARTICLES_CATEGORY_FIELD_AUTHOR_DESC" query="select id, name, username from #__users where id IN (select distinct(created_by) from #__content) order by name ASC" key_field="id" value_field="name">
+					<option value="">JOPTION_SELECT_AUTHORS</option>
+				</field>
+				<field name="filteringspacer3" type="spacer" hr="true" />
+				<field name="author_alias_filtering_type" type="radio" default="1" label="MOD_ARTICLES_CATEGORY_FIELD_AUTHORALIASFILTERING_LABEL" description="MOD_ARTICLES_CATEGORY_FIELD_AUTHORALIASFILTERING_DESC">
+					<option value="1">MOD_ARTICLES_CATEGORY_OPTION_INCLUSIVE_VALUE</option>
+					<option value="0">MOD_ARTICLES_CATEGORY_OPTION_EXCLUSIVE_VALUE</option>
+				</field>
+				<field name="created_by_alias" type="sql" multiple="true" size="5" label="MOD_ARTICLES_CATEGORY_FIELD_AUTHORALIAS_LABEL" description="MOD_ARTICLES_CATEGORY_FIELD_AUTHORALIAS_DESC" query="select distinct(created_by_alias) from #__content where created_by_alias != '' order by created_by_alias ASC" key_field="created_by_alias" value_field="created_by_alias">
+					<option value="">JOPTION_SELECT_AUTHOR_ALIASES</option>
+				</field>
+				<field name="filteringspacer4" type="spacer" hr="true" />
+				<field name="excluded_articles" type="textarea" cols="10" rows="3" label="MOD_ARTICLES_CATEGORY_FIELD_EXCLUDEDARTICLES_LABEL" description="MOD_ARTICLES_CATEGORY_FIELD_EXCLUDEDARTICLES_DESC" />
+				<field name="filteringspacer5" type="spacer" hr="true" />
+				<field name="article_ordering" type="list" default="a.title" label="MOD_ARTICLES_CATEGORY_FIELD_ARTICLEORDERING_LABEL" description="MOD_ARTICLES_CATEGORY_FIELD_ARTICLEORDERING_DESC">
+					<option value="a.ordering">MOD_ARTICLES_CATEGORY_OPTION_ORDERING_VALUE</option>
+					<option value="fp.ordering">MOD_ARTICLES_CATEGORY_OPTION_ORDERINGFEATURED_VALUE</option>
+					<option value="a.hits">MOD_ARTICLES_CATEGORY_OPTION_HITS_VALUE</option>
+					<option value="a.title">JGLOBAL_TITLE</option>
+					<option value="a.id">MOD_ARTICLES_CATEGORY_OPTION_ID_VALUE</option>
+					<option value="a.alias">JFIELD_ALIAS_LABEL</option>
+					<option value="a.created">MOD_ARTICLES_CATEGORY_OPTION_CREATED_VALUE</option>
+					<option value="modified">MOD_ARTICLES_CATEGORY_OPTION_MODIFIED_VALUE</option>
+					<option value="publish_up">MOD_ARTICLES_CATEGORY_OPTION_STARTPUBLISHING_VALUE</option>
+					<option value="a.publish_down">MOD_ARTICLES_CATEGORY_OPTION_FINISHPUBLISHING_VALUE</option>
+				</field>
+				<field name="article_ordering_direction" type="list" default="ASC" label="MOD_ARTICLES_CATEGORY_FIELD_ARTICLEORDERINGDIR_LABEL" description="MOD_ARTICLES_CATEGORY_FIELD_ARTICLEORDERINGDIR_DESC">
+					<option value="DESC">MOD_ARTICLES_CATEGORY_OPTION_DESCENDING_VALUE</option>
+					<option value="ASC">MOD_ARTICLES_CATEGORY_OPTION_ASCENDING_VALUE</option>
+				</field>
+				<field name="filteringspacer6" type="spacer" hr="true" />
+				<field name="date_filtering" type="radio" default="off" label="MOD_ARTICLES_CATEGORY_FIELD_DATEFILTERING_LABEL" description="MOD_ARTICLES_CATEGORY_FIELD_DATEFILTERING_DESC">
+					<option value="off">MOD_ARTICLES_CATEGORY_OPTION_OFF_VALUE</option>
+					<option value="range">MOD_ARTICLES_CATEGORY_OPTION_DATERANGE_VALUE</option>
+					<option value="relative">MOD_ARTICLES_CATEGORY_OPTION_RELATIVEDAY_VALUE</option>
+				</field>
+				<field name="date_field" type="list" default="a.created" label="MOD_ARTICLES_CATEGORY_FIELD_DATERANGEFIELD_LABEL" description="MOD_ARTICLES_CATEGORY_FIELD_DATERANGEFIELD_DESC">
+					<option value="a.created">MOD_ARTICLES_CATEGORY_OPTION_CREATED_VALUE</option>
+					<option value="a.modified">MOD_ARTICLES_CATEGORY_OPTION_MODIFIED_VALUE</option>
+					<option value="a.publish_up">MOD_ARTICLES_CATEGORY_OPTION_STARTPUBLISHING_VALUE</option>
+				</field>
+				<field name="start_date_range" type="calendar" format="%Y-%m-%d %H:%M:%S" label="MOD_ARTICLES_CATEGORY_FIELD_STARTDATE_LABEL" description="MOD_ARTICLES_CATEGORY_FIELD_STARTDATE_DESC" size="22" filter="user_utc" />
+				<field name="end_date_range" type="calendar" format="%Y-%m-%d %H:%M:%S" label="MOD_ARTICLES_CATEGORY_FIELD_ENDDATE_LABEL" description="MOD_ARTICLES_CATEGORY_FIELD_ENDDATE_DESC" size="22" filter="user_utc" />
+				<field name="relative_date" type="text" default="30" label="MOD_ARTICLES_CATEGORY_FIELD_RELATIVEDATE_LABEL" description="MOD_ARTICLES_CATEGORY_FIELD_RELATIVEDATE_DESC" />
+				<field name="filteringspacer7" type="spacer" hr="true" />
+				<field name="itemLink" type="list" default="urltal" label="AVATAR_ARTICLES_LINK" description="AVATAR_ARTICLES_LINK_DESC">
+						<option value="urltao">AVATAR_ARTICLES_LINK_TO_ARTICLE_ONLY</option>
+						<option value="urltal">AVATAR_ARTICLES_LINK_TO_ARTICLE_LAYOUT</option>
+						<option value="urla">AVATAR_ARTICLES_LINK_A</option>
+						<option value="urlb">AVATAR_ARTICLES_LINK_B</option>
+						<option value="urlc">AVATAR_ARTICLES_LINK_C</option>
+						<option value="unurlc">AVATAR_ARTICLES_UN_LINK</option>
+				</field>
+			</fieldset>
+			<fieldset name="k2content" label="K2_CONTENT_SOURCE_SETTING" addfieldpath="/modules/mod_at_enews_showcase/fields/">
+    			<field name="itemImgSize" type="list" default="Original" label="K2_IMAGE_SIZE" description="K2_IMAGE_SIZE_DESC">
+					<option value="XSmall">K2_XSMALL</option>
+					<option value="Small">K2_SMALL</option>
+					<option value="Medium">K2_MEDIUM</option>
+					<option value="Large">K2_LARGE</option>
+					<option value="XLarge">K2_XLARGE</option>
+					<option value="Original">K2_ORIGINAL</option>
+				</field>
+				<field name="source" type="list" default="filter" label="K2_SOURCE" description="K2_SOURCE_DESC">
+					<option value="filter">K2_RETRIEVE_ITEMS_FROM_CATEGORIES</option>
+					<option value="specific">K2_SELECT_SPECIFIC_ITEMS</option>
+				</field>
+				<field name="" type="header" default="K2_RETRIEVE_ITEMS_FROM_CATEGORIES" label="" description="K2_RETRIEVE_ITEMS_FROM_CATEGORIES_DESC"/>
+				<field name="catfilter" type="radio" default="0" label="K2_CATEGORY_FILTER" description="K2_CATEGORY_FILTER_DESC">
+					<option value="0">K2_ALL</option>
+					<option value="1">K2_SELECT</option>
+				</field>
+				<field name="category_id" type="categoriesmultiple" default="" label="K2_SELECT_ONE_OR_MORE_CATEGORIES" description="K2_SELECT_ONE_OR_MORE_CATEGORIES_DESC"/>
+				<field name="getChildren" type="radio" default="0" label="K2_FETCH_ITEMS_FROM_CHILDREN_CATEGORIES" description="K2_FETCH_ITEMS_FROM_CHILDREN_CATEGORIES_DESC">
+					<option value="0">K2_NO</option>
+					<option value="1">K2_YES</option>
+				</field>
+				<field name="itemsOrdering" type="list" default="" label="K2_ITEM_ORDERING" description="K2_ITEM_ORDERING_DESC">
+					<option value="">K2_DEFAULT</option>
+					<option value="date">K2_OLDEST_FIRST</option>
+					<option value="rdate">K2_MOST_RECENT_FIRST</option>
+					<option value="publishUp">K2_RECENTLY_PUBLISHED</option>
+					<option value="alpha">K2_TITLE_ALPHABETICAL</option>
+					<option value="ralpha">K2_TITLE_REVERSEALPHABETICAL</option>
+					<option value="order">K2_ORDERING</option>
+					<option value="rorder">K2_ORDERING_REVERSE</option>
+					<option value="hits">K2_MOST_POPULAR</option>
+					<option value="best">K2_HIGHEST_RATED</option>
+					<option value="comments">K2_MOST_COMMENTED</option>
+					<option value="modified">K2_LATEST_MODIFIED</option>
+					<option value="rand">K2_RANDOM_ORDERING</option>
+				</field>
+				<field name="FeaturedItems" type="list" default="1" label="K2_FEATURED_ITEMS" description="K2_FEATURED_ITEMS_DESC">
+					<option value="0">K2_HIDE</option>
+					<option value="1">K2_SHOW</option>
+					<option value="2">K2_SHOW_ONLY_FEATURED_ITEMS</option>
+				</field>
+				<field name="popularityRange" type="list" default="" label="K2_TIME_RANGE_IF_ORDERING_IS_SET_TO_MOST_POPULAR_OR_MOST_COMMENTED" description="">
+					<option value="">K2_ALL_TIME</option>
+					<option value="1">K2_1_DAY</option>
+					<option value="3">K2_3_DAYS</option>
+					<option value="7">K2_1_WEEK</option>
+					<option value="15">K2_2_WEEKS</option>
+					<option value="30">K2_1_MONTH</option>
+					<option value="90">K2_3_MONTHS</option>
+					<option value="180">K2_6_MONTHS</option>
+				</field>
+				<field name="" type="header" default="K2_SELECT_SPECIFIC_ITEMS" label="" description=""/>
+				<field name="item" type="item" default="" label="K2_ADD_ITEMS" description="K2_ADD_ITEMS"/>
+				<field name="items" type="items" default="" label="K2_DRAG_AND_DROP_TO_REORDER_ITEMS" description="K2_DRAG_AND_DROP_TO_REORDER_ITEMS_DESC"/>
+			</fieldset>
+    		<fieldset name="infoSetting" label="AT_INFO_SETTING" addfieldpath="/modules/mod_at_medical_showcase/fields/">
+    			<field name="introLength" type="text" size="4" default="100" label="K2_INTROTEXT_LETTERS_LIMIT" description="K2_INTROTEXT_LETTERS_LIMIT_DESC"/>
+    			<field name="newTab" type="radio" default="true" label="AVATAR_ARTICLES_NEW_TAB" description="AVATAR_ARTICLES_NEW_TAB_NEW_TAB_DESC" class="btn-group">	
+					<option value="true">AVATAR_TRUE</option>
+					<option value="false">AVATAR_FALSE</option>
+				</field>
+				<field name="articleTitle" type="radio" default="true" label="AVATAR_ARTICLES_ARTICLE_TITLE" description="AVATAR_ARTICLES_ARTICLE_TITLE_DESC" class="btn-group">	
+					<option value="true">AVATAR_TRUE</option>
+					<option value="false">AVATAR_FALSE</option>
+				</field>
+				<field name="articleIntro" type="radio" default="true" label="AVATAR_ARTICLES_ARTICLE_INTRO" description="AVATAR_ARTICLES_ARTICLE_INTRO_DESC" class="btn-group">	
+					<option value="true">AVATAR_TRUE</option>
+					<option value="false">AVATAR_FALSE</option>
+				</field>
+    			<field name="readmoreIcon" type="radio" default="true" label="AVATAR_SHOWCASE_READMORE_ICON" description="AVATAR_SHOWCASE_READMORE_ICON_DESC" class="btn-group btn-group-yesno">	
+					<option value="true">AVATAR_TRUE</option>
+					<option value="false">AVATAR_FALSE</option>
+				</field>
+				<field name="imgLightboxIcon" type="radio" default="true" label="AVATAR_SHOWCASE_IMAGE_LIGHTBOX_ICON" description="AVATAR_SHOWCASE_IMAGE_LIGHTBOX_ICON_DESC" class="btn-group btn-group-yesno">	
+					<option value="true">AVATAR_TRUE</option>
+					<option value="false">AVATAR_FALSE</option>
+				</field>
+				<field name="readmoreBtn" type="radio" default="true" label="AVATAR_SHOWCASE_READMORE_BUTTON" description="AVATAR_SHOWCASE_READMORE_BUTTON_DESC" class="btn-group btn-group-yesno">	
+					<option value="true">AVATAR_TRUE</option>
+					<option value="false">AVATAR_FALSE</option>
+				</field>
+				<field name="readmoreText" type="text" size="3" default="Read More" label="AVATAR_SHOWCASE_READMORE_TEXT" description="AVATAR_SHOWCASE_READMORE_TEXT_DESC"/>
+				<field name="item_heading" type="list" default="h3" label="AVATAR_SHOWCASE_TITLE_HEADING" description="AVATAR_SHOWCASE_TITLE_HEADING_DESC">
+					<option value="h1">JH1</option>
+					<option value="h2">JH2</option>
+					<option value="h3">JH3</option>
+					<option value="h4">JH4</option>
+					<option value="h5">JH5</option>
+				</field>
+    		</fieldset>
+    		<fieldset name="gridSetting" label="AT_GRID_LAYOUT_SETTING" addfieldpath="/modules/mod_at_medical_showcase/fields/">
+				<field name="gridEffect" type="avatargridselector" default="true" label="AT_GRID_EFFECT" description="AT_GRID_EFFECT_DESC" hide_none="true" hide_default="true" size="1"/>
+				<field name="itemcount" type="text" default="6" label="AVATAR_ARTICLES_COUNT" description="AVATAR_ARTICLES_COUNT_DESC" />
+				<field name="primaryCount" type="text" default="1" label="AVATAR_ARTICLES_PRIMARY_COUNT" description="AVATAR_ARTICLES_PRIMARY_COUNT_DESC" />
+    			<field name="primaryColumns" type="text" default="3" description="AVATAR_SHOWCASE_PRIMARY_COLUMNS_DESC" label="AVATAR_SHOWCASE_PRIMARY_COLUMNS" size="3"/>
+    			<field name="secondaryColumns" type="text" default="3" description="AVATAR_SHOWCASE_SECONDARY_COLUMNS_DESC" label="AVATAR_SHOWCASE_SECONDARY_COLUMNS" size="3"/>
+    		</fieldset>
+    		<fieldset name="bannerSetting" label="AT_BANNER_LAYOUT_SETTING" addfieldpath="/modules/mod_at_medical_showcase/fields/">
+    			<field name="bannerLoop" type="radio" default="true" label="AT_SHOWCASE_BANNER_LOOP" description="AT_SHOWCASE_BANNER_LOOP_DESC" class="btn-group btn-group-yesno">	
+					<option value="true">AVATAR_TRUE</option>
+					<option value="false">AVATAR_FALSE</option>
+				</field>
+				<field name="bannerNav" type="radio" default="true" label="AT_SHOWCASE_BANNER_NAV" description="AT_SHOWCASE_BANNER_NAV_DESC" class="btn-group btn-group-yesno">	
+					<option value="true">AVATAR_TRUE</option>
+					<option value="false">AVATAR_FALSE</option>
+				</field>
+				<field name="bannerAdaptiveHeight" type="radio" default="true" label="AT_SHOWCASE_BANNER_ADAPTIVE_HEIGHT" description="AT_SHOWCASE_BANNER_ADAPTIVE_HEIGHT_DESC" class="btn-group btn-group-yesno">	
+					<option value="true">AVATAR_TRUE</option>
+					<option value="false">AVATAR_FALSE</option>
+				</field>
+				<field name="bannerNavClick" type="radio" default="true" label="AT_SHOWCASE_BANNER_NAV_CLICK" description="AT_SHOWCASE_BANNER_NAV_CLICK_DESC" class="btn-group btn-group-yesno">	
+					<option value="true">AVATAR_TRUE</option>
+					<option value="false">AVATAR_FALSE</option>
+				</field>
+				<field name="bannerAuto" type="radio" default="true" label="AT_SHOWCASE_BANNER_AUTO" description="AT_SHOWCASE_BANNER_AUTO_DESC" class="btn-group btn-group-yesno">	
+					<option value="true">AVATAR_TRUE</option>
+					<option value="false">AVATAR_FALSE</option>
+				</field>
+				<field name="bannerEffect" type="list" default="fade" label="AT_SHOWCASE_BANNER_EFFECT" description="AT_SHOWCASE_BANNER_EFFECT_DESC" class="btn-group btn-group-yesno">	
+					<option value="fade">AT_BANNER_FADE</option>
+					<option value="move">AT_BANNER_MOVE</option>
+				</field>
+    		</fieldset>
+    		<fieldset name="caroucelSetting" label="AT_CAROUSEL_LAYOUT_SETTING" addfieldpath="/modules/mod_at_medical_showcase/fields/">
+    			<field name="caroucelEffect" type="avatarcaroucelselector" default="true" label="AT_CAROUCEL_EFFECT" description="AT_CAROUCEL_EFFECT_DESC" hide_none="true" hide_default="true" size="1"/>
+    			<field name="caroucelItemsShow" type="text" default="6" label="AT_CAROUCEL_ITEM_SHOW" description="AT_CAROUCEL_ITEM_SHOW_DESC" />
+    			<field name="caroucelItemsScroll" type="text" default="2" label="AT_CAROUCEL_ITEM_SCROLL" description="AT_CAROUCEL_ITEM_SCROLL_DESC" />
+    			<field name="caroucelDots" type="radio" default="true" label="AT_CAROUCEL_DOTS" description="AT_CAROUCEL_DOTS_DESC" class="btn-group btn-group-yesno">
+    				<option value="true">AVATAR_TRUE</option>
+					<option value="false">AVATAR_FALSE</option>
+				</field>
+    		</fieldset>
+    	</fields>	
+    </config>
+</extension>

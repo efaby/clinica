@@ -1,0 +1,13 @@
+.at-social-list{
+	list-style: none;
+	margin-left: 0;
+	margin: 0;
+}
+.at-social-list li a div {
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.at-social-list li {
+	float: left;
+}
+.at-social-links{display: inline-block;}
