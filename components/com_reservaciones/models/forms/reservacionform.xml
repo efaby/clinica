@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+<field name="id"
+			type="text"
+			default="0"
+			label="COM_RESERVACIONES_FORM_LBL_RESERVACION_ID"
+			readonly="true"
+			class="readonly"
+			description="JGLOBAL_FIELD_ID_DESC"
+		/> 
+		<field name="turno"
+			type="text"
+			default=""
+			label="Seleccione un Turno"
+			readonly="true"
+			class="readonly"
+			required="true" 
+			description=""
+			
+		/> 
+		<field name="turno_fecha" 
+	 		type="text" 
+	 		default="0" 
+	 		class="readonly"
+		/>
+		<field name="cliente_id" 
+	 		type="text" 
+	 		default="0" 
+	 		class="readonly"
+		/>		
+		<field name="cedula"
+			type="text"
+			label="COM_RESERVACIONES_FORM_LBL_RESERVACION_CEDULA"
+			description="COM_RESERVACIONES_FORM_DESC_RESERVACION_CEDULA" 
+			hint="COM_RESERVACIONES_FORM_LBL_RESERVACION_CEDULA"
+			required="true" 
+			class="validate-cedula"
+		/> 
+		
+		<field name="nombres"
+			type="text"
+			label="COM_RESERVACIONES_FORM_LBL_RESERVACION_NOMBRES"
+			description="COM_RESERVACIONES_FORM_DESC_RESERVACION_NOMBRES" 
+			hint="COM_RESERVACIONES_FORM_LBL_RESERVACION_NOMBRES"
+			required="true" 
+			readonly="true"
+			
+		/> 
+		
+		<field name="doctor_id" 
+	 		type="sql" 
+	 		default="10" 
+	 		label="COM_RESERVACIONES_FORM_LBL_RESERVACION_DOCTOR" 
+	 		query="SELECT a.id, b.name FROM #__reservaciones_doctor as a inner join #__users as b on b.id =  a.id_user where state = 1" 
+	 		key_field="id" 
+	 		value_field="name"
+	 		required="true" >
+		 		<option value="">COM_RESERVACIONES_FORM_LBL_SELECT_RESERVACION_DOCTOR</option>
+		</field>
+		
+		<field name="observaciones"
+			type="textarea"
+			label="COM_RESERVACIONES_FORM_LBL_RESERVACION_OBSERVACION"
+			description="COM_RESERVACIONES_FORM_DESC_RESERVACION_OBSERVACION" 
+			hint="COM_RESERVACIONES_FORM_LBL_RESERVACION_OBSERVACION"
+			menu_published="0"
+			filter="raw"
+			directory_stripext="true"
+			directory_hidenode="true"
+			directory_hidedefault="true"
+			heading="h4"
+			close="true"
+			option_on="Yes"
+			option_off="Yes"
+			toggle_default_value="0"
+			class="validate-observacion"
+		/> 
+        
+
+	</fieldset>
+
+</form>

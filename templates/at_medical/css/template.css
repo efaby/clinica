@@ -1964,7 +1964,7 @@ img{
 }
 /*------btn--------*/
 .btn, .btn-1{
-	padding: 15px 20px;
+	padding: 8px 15px;
 	font-family: Oswald;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -3219,4 +3219,22 @@ div.k2TagCloudBlock a{
 .at-logo {
   font-size: 43px;
   font-style: italic;  
+}
+
+.invalid {
+    border-color: red !important;
+}
+
+.element-invisible {
+    border: 0 none;
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.combo{
+	width: 200px;
 }

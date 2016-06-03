@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+        <field name="id"
+			type="text"
+			default="0"
+			label="COM_RESERVACIONES_FORM_LBL_CLIENTE_ID"
+			readonly="true"
+			class="readonly"
+			description="JGLOBAL_FIELD_ID_DESC"
+		/> 
+
+	<field name="cedula"
+			type="text"
+			label="COM_RESERVACIONES_FORM_LBL_CLIENTE_CEDULA"
+			description="COM_RESERVACIONES_FORM_DESC_CLIENTE_CEDULA" 
+			hint="COM_RESERVACIONES_FORM_LBL_CLIENTE_CEDULA"
+			required="true" 
+			class="validate-cedula"
+		/> 
+ 
+		<field name="nombres"
+			type="text"
+			label="COM_RESERVACIONES_FORM_LBL_CLIENTE_NOMBRES"
+			description="COM_RESERVACIONES_FORM_DESC_CLIENTE_NOMBRES" 
+			hint="COM_RESERVACIONES_FORM_LBL_CLIENTE_NOMBRES"
+			required="true" 
+			class="validate-nombre"
+		/> 
+
+ 
+		<field name="apellidos"
+			type="text"
+			label="COM_RESERVACIONES_FORM_LBL_CLIENTE_APELLIDOS"
+			description="COM_RESERVACIONES_FORM_DESC_CLIENTE_APELLIDOS" 
+			hint="COM_RESERVACIONES_FORM_LBL_CLIENTE_APELLIDOS"
+			required="true" 
+			class="validate-apellido"
+		/> 
+
+ 
+		<field name="direccion"
+			type="textarea"
+			label="COM_RESERVACIONES_FORM_LBL_CLIENTE_DIRECCION"
+			description="COM_RESERVACIONES_FORM_DESC_CLIENTE_DIRECCION" 
+			hint="COM_RESERVACIONES_FORM_LBL_CLIENTE_DIRECCION"
+			required="true" 
+			menu_published="0"
+			filter="raw"
+			directory_stripext="true"
+			directory_hidenode="true"
+			directory_hidedefault="true"
+			heading="h4"
+			close="true"
+			option_on="Yes"
+			option_off="Yes"
+			toggle_default_value="0"
+			class="validate-direccion"
+		/> 
+
+ 
+		<field name="email"
+			type="email"
+			label="Email"
+			description=""
+			validate="email"
+		/> 
+
+ 
+		<field name="telefono"
+			type="tel"
+			label="COM_RESERVACIONES_FORM_LBL_CLIENTE_TELEFONO"
+			description="COM_RESERVACIONES_FORM_DESC_CLIENTE_TELEFONO" 
+			hint="COM_RESERVACIONES_FORM_LBL_CLIENTE_TELEFONO"
+			required="true" 
+			class="validate-telefono"
+		/> 
+
+ 
+		<field name="celular"
+			type="tel"
+			label="COM_RESERVACIONES_FORM_LBL_CLIENTE_CELULAR"
+			description="COM_RESERVACIONES_FORM_DESC_CLIENTE_CELULAR" 
+			hint="COM_RESERVACIONES_FORM_LBL_CLIENTE_CELULAR"
+			required="true" 
+			class="validate-celular"
+		/> 
+
+ 
+		<field name="edad"
+			type="number"
+			label="COM_RESERVACIONES_FORM_LBL_CLIENTE_EDAD"
+			description="COM_RESERVACIONES_FORM_DESC_CLIENTE_EDAD" 
+			hint="COM_RESERVACIONES_FORM_LBL_CLIENTE_EDAD"
+			required="true" 
+			min="0"
+			max="100"
+			step="1"
+			class="validate-edad"
+		/> 
+
+ 
+		<field name="version_note"
+			type="text"
+			label="JGLOBAL_FIELD_VERSION_NOTE_LABEL"
+			description="JGLOBAL_FIELD_VERSION_NOTE_DESC"
+			class="inputbox"
+			size="45"
+			labelclass="control-label"
+		/> 
+		
+		<field name="numero_ficha"
+			type="text"
+			label="COM_RESERVACIONES_FORM_LBL_CLIENTE_FICHA"
+			description="COM_RESERVACIONES_FORM_DESC_CLIENTE_FICHA" 
+			hint="COM_RESERVACIONES_FORM_LBL_CLIENTE_FICHA"
+			required="true" 
+			class="validate-ficha"
+		/> 
+ 
+		<field name="state"
+			type="list"
+			label="JSTATUS"
+			description="JFIELD_PUBLISHED_DESC"
+			class="inputbox"
+			size="1"
+			default="1"
+		>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+
+	</fieldset>
+
+</form>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+        <field name="id"
+			type="text"
+			default="0"
+			label="COM_RESERVACIONES_FORM_LBL_TURNO_ID"
+			readonly="true"
+			class="readonly"
+			description="JGLOBAL_FIELD_ID_DESC"
+		/> 
+		<field name="doctor_id" 
+	 		type="doctor" 
+	 		default="10" 
+	 		label="COM_RESERVACIONES_FORM_LBL_TURNO_NOMBRE" 
+	 		class="combo"
+	 		required="true" >
+		 		<option value="">COM_RESERVACIONES_FORM_LBL_SELECT_TURNO_NOMBRE</option>
+		</field>
+				
+		<field name="especialidad_id" 
+	 		type="sql" 
+	 		default="10" 
+	 		label="COM_RESERVACIONES_FORM_LBL_TURNO_ESPECIALIDAD" 
+	 		query="SELECT id, nombre FROM #__reservaciones_especialidad where state = 1" 
+	 		key_field="id" 
+	 		value_field="nombre"
+	 		class="combo"
+	 		required="true" >
+		 		<option value="">COM_RESERVACIONES_FORM_LBL_SELECT_TURNO_ESPECIALIDAD</option>
+		</field>
+		
+		<field name="dia_id" 
+	 		type="sql" 
+	 		default="10" 
+	 		label="COM_RESERVACIONES_FORM_LBL_TURNO_DIA" 
+	 		query="SELECT id, nombre FROM #__reservaciones_dia where state = 1" 
+	 		key_field="id" 
+	 		value_field="nombre"
+	 		class="combo"
+	 		required="true" >
+		 		<option value="">COM_RESERVACIONES_FORM_LBL_SELECT_TURNO_DIA</option>
+		</field>
+		
+		<field name="hora_inicio"
+			type="list"
+			label="COM_RESERVACIONES_FORM_LBL_TURNO_HORA_INICIO"
+			description="COM_RESERVACIONES_FORM_DESC_TURNO_HORA_INICIO"
+			class="combo"
+			size="2"			
+			required="true" >	
+			<option value="">Seleccione Hora Inicio</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>			
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="13">13</option>
+			<option value="14">14</option>
+			<option value="15">15</option>
+			<option value="16">16</option>
+			<option value="17">17</option>
+			<option value="18">18</option>
+			<option value="19">19</option>
+			<option value="20">20</option>
+			<option value="21">21</option>
+			<option value="22">22</option>
+			<option value="23">23</option>
+			<option value="24">24</option>		
+		</field>
+		
+		<field name="hora_fin"
+			type="list"
+			label="COM_RESERVACIONES_FORM_LBL_TURNO_HORA_FIN"
+			description="COM_RESERVACIONES_FORM_DESC_TURNO_HORA_FIN"
+			class="inputbox validate-horas combo"
+			size="2"	
+			required="true" >		
+			<option value="">Seleccione Hora Fin</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>			
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="13">13</option>
+			<option value="14">14</option>
+			<option value="15">15</option>
+			<option value="16">16</option>
+			<option value="17">17</option>
+			<option value="18">18</option>
+			<option value="19">19</option>
+			<option value="20">20</option>
+			<option value="21">21</option>
+			<option value="22">22</option>
+			<option value="23">23</option>
+			<option value="24">24</option>		
+		</field>
+		<field name="minuto_inicio"
+			type="list"
+			label="COM_RESERVACIONES_FORM_LBL_TURNO_MINUTO_INICIO"
+			description="COM_RESERVACIONES_FORM_DESC_TURNO_MINUTO_INICIO"
+			class="inputbox combo"
+			size="2"
+			required="true" >		
+		
+			<option value="">Seleccione Minuto Inicio</option>
+			<option value="0">00</option>
+			<option value="10">10</option>
+			<option value="20">20</option>
+			<option value="30">30</option>
+			<option value="40">40</option>
+			<option value="50">50</option>
+		</field>
+        <field name="minuto_fin"
+			type="list"
+			label="COM_RESERVACIONES_FORM_LBL_TURNO_MINUTO_FIN"
+			description="COM_RESERVACIONES_FORM_DESC_TURNO_MINUTO_FIN"
+			class="inputbox validate-horas combo"
+			size="2"
+			required="true" >			
+		
+			<option value="">Seleccione la Minuto Fin</option>
+			<option value="0">00</option>
+			<option value="10">10</option>
+			<option value="20">20</option>
+			<option value="30">30</option>
+			<option value="40">40</option>
+			<option value="50">50</option>
+		</field>
+		
+		<field name="numero_personas"
+			type="number"
+			label="COM_RESERVACIONES_FORM_LBL_TURNO_NUMERO_PERSONAS"
+			description="COM_RESERVACIONES_FORM_DESC_TURNO_NUMERO_PERSONAS" 
+			hint="COM_RESERVACIONES_FORM_LBL_TURNO_NUMERO_PERSONAS"
+			required="true" 
+			min="1"
+			max="20"
+			step="1"
+			class="validate-personas"
+			
+		/>
+		<field name="state"
+			type="list"
+			label="JSTATUS"
+			description="JFIELD_PUBLISHED_DESC"
+			class="inputbox"
+			size="1"
+			default="1"
+		>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+
+	</fieldset>
+
+</form>

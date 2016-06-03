@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+ <field name="id"
+			type="text"
+			default="0"
+			label="COM_RESERVACIONES_FORM_LBL_DOCTOR_ID"
+			readonly="true"
+			class="readonly"
+			description="JGLOBAL_FIELD_ID_DESC"
+		/> 
+		
+		 <field name="id_user"
+			type="text"
+			default="0"
+			
+			readonly="true"
+			class="readonly"
+			
+		/> 
+		
+		<field name="name" type="text"
+			description="COM_USERS_USER_FIELD_NAME_DESC"
+			label="COM_RESERVACIONES_FORM_LBL_DOCTOR_NOMBRE"
+			hint="COM_RESERVACIONES_FORM_LBL_DOCTOR_NOMBRE"
+			required="true"
+			size="30"
+			class="validate-nombre"
+		/>
+
+		<field name="username" type="text"
+			description="COM_RESERVACIONES_FORM_DESC_DOCTOR_USUARIO"
+			label="COM_RESERVACIONES_FORM_LBL_DOCTOR_USUARIO"
+			required="true"
+			size="30"
+			hint="COM_RESERVACIONES_FORM_LBL_DOCTOR_USUARIO"
+			class="validate-username"
+		/>
+
+		<field name="password" type="password"
+			autocomplete="off"
+			class="validate-password"
+			description="COM_RESERVACIONES_FORM_DESC_DOCTOR_PASSWORD"
+			filter="raw"
+			validate="password"
+			label="COM_RESERVACIONES_FORM_LBL_DOCTOR_PASSWORD"
+			hint="COM_RESERVACIONES_FORM_LBL_DOCTOR_PASSWORD"
+			size="30"
+		/>
+
+		<field name="password2" type="password"
+			autocomplete="off"
+			class="validate-password"
+			description="COM_RESERVACIONES_FORM_DESC_DOCTOR_PASSWORD2"
+			filter="raw"
+			label="COM_RESERVACIONES_FORM_LBL_DOCTOR_PASSWORD2"
+			hint="COM_RESERVACIONES_FORM_LBL_DOCTOR_PASSWORD2"
+			message="COM_USERS_USER_FIELD_PASSWORD1_MESSAGE"
+			size="30"
+			validate="equals"
+			field="password"
+		/>
+
+		<field name="email" type="email"
+			description="COM_RESERVACIONES_FORM_DESC_DOCTOR_EMAIL"
+			required="true"
+			size="30"
+			validate="email"
+			label="COM_RESERVACIONES_FORM_LBL_DOCTOR_EMAIL"
+			hint="COM_RESERVACIONES_FORM_LBL_DOCTOR_EMAIL"
+		/>
+ 
+		<field name="cedula"
+			type="text"
+			label="COM_RESERVACIONES_FORM_LBL_DOCTOR_CEDULA"
+			description="COM_RESERVACIONES_FORM_DESC_DOCTOR_CEDULA" 
+			hint="COM_RESERVACIONES_FORM_LBL_DOCTOR_CEDULA"
+			required="true" 
+			class="validate-cedula"
+		/> 
+ 
+		<field name="direccion"
+			type="textarea"
+			label="COM_RESERVACIONES_FORM_LBL_DOCTOR_DIRECCION"
+			description="COM_RESERVACIONES_FORM_DESC_DOCTOR_DIRECCION" 
+			hint="COM_RESERVACIONES_FORM_LBL_DOCTOR_DIRECCION"
+			required="true" 
+			menu_published="0"
+			filter="raw"
+			directory_stripext="true"
+			directory_hidenode="true"
+			directory_hidedefault="true"
+			heading="h4"
+			close="true"
+			option_on="Yes"
+			option_off="Yes"
+			toggle_default_value="0"
+			class="validate-direccion"
+		/> 
+
+ 
+		<field name="telefono"
+			type="tel"
+			label="COM_RESERVACIONES_FORM_LBL_DOCTOR_TELEFONO"
+			description="COM_RESERVACIONES_FORM_DESC_DOCTOR_TELEFONO" 
+			hint="COM_RESERVACIONES_FORM_LBL_DOCTOR_TELEFONO"
+			required="true" 
+			class="validate-telefono"
+		/> 
+
+ 
+		<field name="celular"
+			type="tel"
+			label="COM_RESERVACIONES_FORM_LBL_DOCTOR_CELULAR"
+			description="COM_RESERVACIONES_FORM_DESC_DOCTOR_CELULAR" 
+			hint="COM_RESERVACIONES_FORM_LBL_DOCTOR_CELULAR"
+			required="true" 
+			class="validate-celular"
+		/> 
+
+ 		<field name="especialidad_id" 
+	 		type="sql" 
+	 		default="10" 
+	 		label="COM_RESERVACIONES_FORM_LBL_DOCTOR_ESPECIALIDAD" 
+	 		query="SELECT id, nombre FROM #__reservaciones_especialidad where state = 1" 
+	 		key_field="id" 
+	 		value_field="nombre"
+	 		required="true" >
+		 		<option value="">COM_RESERVACIONES_FORM_LBL_SELECT_DOCTOR_ESPECIALIDAD</option>
+		</field>
+
+		<field name="state"
+			type="list"
+			label="JSTATUS"
+			description="JFIELD_PUBLISHED_DESC"
+			class="inputbox"
+			size="1"
+			default="1"
+		>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+        
+
+	</fieldset>
+
+</form>

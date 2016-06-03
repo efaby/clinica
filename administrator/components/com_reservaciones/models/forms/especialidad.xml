@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+<field name="id"
+			type="text"
+			default="0"
+			label="COM_RESERVACIONES_FORM_LBL_ESPECIALIDAD_ID"
+			readonly="true"
+			class="readonly"
+			description="JGLOBAL_FIELD_ID_DESC"
+		/> 
+
+ 
+		<field name="nombre"
+			type="text"
+			label="COM_RESERVACIONES_FORM_LBL_ESPECIALIDAD_NOMBRE"
+			description="COM_RESERVACIONES_FORM_DESC_ESPECIALIDAD_NOMBRE" 
+			hint="COM_RESERVACIONES_FORM_LBL_ESPECIALIDAD_NOMBRE"
+			required="true" 
+			class="validate-nombre"
+		/> 
+
+ 
+		<field name="descripcion"
+			type="textarea"
+			label="COM_RESERVACIONES_FORM_LBL_ESPECIALIDAD_DESCRIPCION"
+			description="COM_RESERVACIONES_FORM_DESC_ESPECIALIDAD_DESCRIPCION" 
+			hint="COM_RESERVACIONES_FORM_LBL_ESPECIALIDAD_DESCRIPCION"
+			required="true" 
+			class="validate-descripcion"
+		/> 
+		
+		<field name="state"
+			type="list"
+			label="JSTATUS"
+			description="JFIELD_PUBLISHED_DESC"
+			class="inputbox"
+			size="1"
+			default="1"
+		>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+        
+
+	</fieldset>
+
+</form>

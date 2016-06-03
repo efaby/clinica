@@ -103,7 +103,7 @@ select:focus:invalid:focus {
   box-shadow: 0 0 2px #C7C7C7;
 }
 textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input{
-	padding: 8px 8px;
+	padding: 5px 8px;
 	background: #fff;
 	border: none;
 	color: #8F8F8F;
@@ -172,9 +172,11 @@ input[type="color"]:focus,
 	box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.075);
 }
 .chzn-container-single .chzn-single{
-	-webkit-border-radius: 0px;
+	/* -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
-    border-radius: 0px;
+    border-radius: 0px; */
+    height: 30px;
+    line-height: 30px;
 }
 .form-horizontal .control-label{
 	text-align: left;

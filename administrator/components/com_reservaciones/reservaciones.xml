@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_reservaciones</name>
+    <creationDate>2016-05-12</creationDate>
+    <copyright>Wilmer</copyright>
+    <license>Licencia Pública General GNU versión 2 o posterior. Consulte LICENSE.txt</license>
+    <author>Wilmer</author>
+    <authorEmail>wilmeraguear@hotmail.es</authorEmail>
+    <authorUrl></authorUrl>
+    <version>CVS: 1.0.0</version>
+    <description>Componente de reservaciones</description>
+    
+    
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <update> <!-- Runs on update -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/update.mysql.utf8.sql</file>
+        </sql>
+    </update>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>reservaciones.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+    </files>
+    <media destination="com_reservaciones" folder="media">
+        <folder>js</folder>
+        <folder>css</folder>
+    </media>
+    <languages folder="languages/site">
+        
+			<language tag="en-GB">en-GB/en-GB.com_reservaciones.ini</language>
+			<language tag="es-ES">es-ES/es-ES.com_reservaciones.ini</language>
+    </languages>
+    <administration>
+        <menu img="media/com_reservaciones/images/s_com_reservaciones.png" >COM_RESERVACIONES</menu>
+        <submenu>
+            
+			<menu link="option=com_reservaciones&amp;view=clientes" view="clientes" img="media/com_reservaciones/images/s_clientes.png" alt="Reservaciones/Clientes">COM_RESERVACIONES_TITLE_CLIENTES</menu>
+
+			<menu link="option=com_reservaciones&amp;view=turnos" view="turnos" img="media/com_reservaciones/images/s_clientes.png" alt="Reservaciones/Turnos">COM_RESERVACIONES_TITLE_TURNOSS</menu>
+
+			<menu link="option=com_reservaciones&amp;view=especialidades" view="especialidades" img="media/com_reservaciones/images/s_clientes.png" alt="Reservaciones/Especialidades">COM_RESERVACIONES_TITLE_ESPECIALIDADES</menu>
+
+			<menu link="option=com_reservaciones&amp;view=doctores" view="doctores" img="media/com_reservaciones/images/s_clientes.png" alt="Reservaciones/Doctores">COM_RESERVACIONES_TITLE_DOCTORES</menu>
+
+			<menu link="option=com_reservaciones&amp;view=reservaciones" view="reservaciones" img="media/com_reservaciones/images/s_clientes.png" alt="Reservaciones/Reservaciones">COM_RESERVACIONES_TITLE_RESERVACIONES</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>reservaciones.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+            
+			<language tag="en-GB">en-GB/en-GB.com_reservaciones.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_reservaciones.sys.ini</language>
+			<language tag="es-ES">es-ES/es-ES.com_reservaciones.ini</language>
+			<language tag="es-ES">es-ES/es-ES.com_reservaciones.sys.ini</language>
+        </languages>
+    </administration>
+    <config>
+        <fields name="params">
+            <fieldset name="component">
+                <field name="save_history" default="0" />
+            </fieldset>
+        </fields>
+    </config>
+    <plugins>
+        <plugin group="search" plugin="reservaciones"/>
+    </plugins>
+    
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_RESERVACIONES_TITLE_LIST_VIEW_TURNOSS" option="View">
+        <message>
+                        <![CDATA[COM_RESERVACIONES_TITLE_LIST_VIEW_TURNOSS_DESC]]>
+        </message>
+	</layout>
+</metadata>
