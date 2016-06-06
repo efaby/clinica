@@ -75,22 +75,23 @@ jQuery(function() {
 
 <form action="<?php echo JRoute::_('index.php?option=com_reservaciones&view=reservaciones'); ?>" method="post"
       name="adminForm" id="adminForm" class="form-validate">
-
-	<?php echo $this->loadTemplate('filter'); ?>
+	<div style="border: 1px solid rgb(220, 220, 220); padding: 15px; border-radius: 5px;">
+		<?php echo $this->loadTemplate('filter'); ?>
+	</div>
 	<br>
 	<table class="table table-bordered" id="clienteList">
 		<thead>
 		<tr>						
-				<th class='left'>
+				<th class='left title-table'>
 				<?php echo JHtml::_('grid.sort',  'COM_RESERVACIONES_RESERVACIONES_CLIENTE', 'cliente`', $listDirn, $listOrder); ?>
 				</th>
-				<th class='left'>
+				<th class='left title-table'>
 				<?php echo JHtml::_('grid.sort',  'COM_RESERVACIONES_RESERVACIONES_DOCTOR', 'doctor', $listDirn, $listOrder); ?>
 				</th>
-				<th class='left'>
+				<th class='left title-table'>
 				<?php echo JHtml::_('grid.sort',  'COM_RESERVACIONES_RESERVACIONES_FECHA', 'dia', $listDirn, $listOrder); ?>
 				</th>
-				<th class='left'>
+				<th class='left title-table'>
 				<?php echo JHtml::_('grid.sort',  'COM_RESERVACIONES_RESERVACIONES_ESTADO_TURNO', 'estado', $listDirn, $listOrder); ?>
 				</th>
 				<th class='center'>

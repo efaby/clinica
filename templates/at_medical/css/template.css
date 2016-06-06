@@ -3238,3 +3238,12 @@ div.k2TagCloudBlock a{
 .combo{
 	width: 200px;
 }
+
+.modal{
+	position: relative;
+}
+
+.title-table a {
+	font-family: Oswald;
+	font-weight: bold;
+}

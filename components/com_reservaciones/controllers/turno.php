@@ -78,7 +78,7 @@ class ReservacionesControllerTurno extends JControllerLegacy
 			$app->setUserState('com_reservaciones.edit.turnos.data', null);
 
 			// Redirect to the list screen.
-			$this->setMessage(JText::_('COM_RESERVACIONES_ITEM_SAVED_SUCCESSFULLY'));
+			$this->setMessage(JText::_('COM_RESERVACIONES_ITEM_STATE'));
 			$menu = JFactory::getApplication()->getMenu();
 			$item = $menu->getActive();
 

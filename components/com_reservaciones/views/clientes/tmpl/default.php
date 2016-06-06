@@ -38,30 +38,32 @@ JHtml::_('behavior.formvalidation');
 
 	});
 	</script>
+	
 <form action="<?php echo JRoute::_('index.php?option=com_reservaciones&view=clientes'); ?>" method="post"
       name="adminForm" id="adminForm" class="form-validate">
-
+<div style="border: 1px solid rgb(220, 220, 220); padding: 15px; border-radius: 5px;">
 	<?php echo $this->loadTemplate('filter'); ?>
+	</div>
 	<br>
 	<table class="table table-bordered" id="clienteList">
 		<thead>
 		<tr>
 			<?php if (isset($this->items[0]->state)): ?>
-				<th width="5%">
+				<th width="5%" class='title-table'>
 	<?php echo JHtml::_('grid.sort', 'Estado', 'a.state', $listDirn, $listOrder); ?>
 </th>
 			<?php endif; ?>
 
-							<th class=''>
+				<th class='title-table'>
 				<?php echo JHtml::_('grid.sort',  'COM_RESERVACIONES_CLIENTES_CEDULA', 'a.cedula', $listDirn, $listOrder); ?>
 				</th>
-				<th class=''>
+				<th class="title-table">
 				<?php echo JHtml::_('grid.sort',  'COM_RESERVACIONES_CLIENTES_NOMBRES', 'a.nombres', $listDirn, $listOrder); ?>
 				</th>
-				<th class=''>
+				<th class='title-table'>
 				<?php echo JHtml::_('grid.sort',  'COM_RESERVACIONES_CLIENTES_APELLIDOS', 'a.apellidos', $listDirn, $listOrder); ?>
 				</th>
-				<th class=''>
+				<th class='title-table'>
 				<?php echo JText::_('COM_RESERVACIONES_CLIENTES_DIRECCION'); ?>
 				</th>
 				<th class=''>
@@ -106,7 +108,9 @@ JHtml::_('behavior.formvalidation');
 				<?php if (isset($this->items[0]->state)) : ?>
 					<?php $class = ($canChange) ? 'active' : 'disabled'; ?>
 					<td class="center">
-	<a class="btn btn-micro <?php echo $class; ?>" href="<?php echo ($canChange) ? JRoute::_('index.php?option=com_reservaciones&task=cliente.publish&id=' . $item->id . '&state=' . (($item->state + 1) % 2), false, 2) : '#'; ?>">
+	<a class="btn btn-micro <?php echo $class; ?> hasTooltip" href="<?php echo ($canChange) ? JRoute::_('index.php?option=com_reservaciones&task=cliente.publish&id=' . $item->id . '&state=' . (($item->state + 1) % 2), false, 2) : '#'; ?>"
+	data-toggle="tooltip" title="<?php echo ($item->state == 1)? "Inhabilitar":"Habilitar";?>"
+	>
 	<?php if ($item->state == 1): ?>
 		<i class="icon-publish"></i>
 	<?php else: ?>
@@ -156,10 +160,17 @@ JHtml::_('behavior.formvalidation');
 								<?php if ($canEdit || $canDelete): ?>
 					<td class="center">
 						<?php if ($canEdit): ?>
-							<a href="<?php echo JRoute::_('index.php?option=com_reservaciones&task=clienteform.edit&id=' . $item->id, false, 2); ?>" class="btn btn-mini" type="button"><i class="icon-pencil" ></i></a>
+							<a href="<?php echo JRoute::_('index.php?option=com_reservaciones&task=clienteform.edit&id=' . $item->id, false, 2); ?>" class="btn btn-mini hasTooltip" type="button"
+								data-toggle="tooltip" 
+								
+								title="Editar"
+							><i class="icon-pencil" ></i></a>
 						<?php endif; ?>
 						<?php if ($canDelete): ?>
-							<a href="<?php echo JRoute::_('index.php?option=com_reservaciones&task=clienteform.remove&id=' . $item->id, false, 2); ?>" class="btn btn-mini delete-button" type="button"><i class="icon-trash" ></i></a>
+							<a href="<?php echo JRoute::_('index.php?option=com_reservaciones&task=clienteform.remove&id=' . $item->id, false, 2); ?>" class="btn btn-mini delete-button hasTooltip" type="button"
+							data-toggle="tooltip" 
+								title="Eliminar"
+							><i class="icon-trash" ></i></a>
 						<?php endif; ?>
 					</td>
 				<?php endif; ?>

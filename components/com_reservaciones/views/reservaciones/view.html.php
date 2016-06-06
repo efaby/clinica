@@ -90,8 +90,9 @@ class ReservacionesViewReservaciones extends JViewLegacy
 		elseif ($app->get('sitename_pagetitles', 0) == 2)
 		{
 			$title = JText::sprintf('JPAGETITLE', $title, $app->get('sitename'));
-		}		
-		$this->document = ($this->document === null) ? JFactory::getDocument() : $this->document;	
+		}	
+			
+		$this->document = (isset($this->document)) ? $this->document :JFactory::getDocument() ;	
 
 		if ($this->params->get('menu-meta_description'))
 		{

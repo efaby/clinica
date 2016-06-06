@@ -28,26 +28,27 @@ $canDelete  = $user->authorise('core.delete', 'com_reservaciones');
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_reservaciones&view=turnos'); ?>" method="post"
       name="adminForm" id="adminForm">
-
+<div style="border: 1px solid rgb(220, 220, 220); padding: 15px; border-radius: 5px;">
 	<?php echo $this->loadTemplate('filter'); ?>
+	</div>
 	<br>
 	<table class="table table-bordered" id="clienteList">
 		<thead>
 		<tr>
 			<?php if (isset($this->items[0]->state)): ?>
-				<th width="5%">
+				<th width="5%" class='title-table'>
 	<?php echo JHtml::_('grid.sort', 'Estado', 'a.state', $listDirn, $listOrder); ?>
 </th>
 			<?php endif; ?>
 
 							
-				<th class='left'>
+				<th class='left title-table'>
 				<?php echo JHtml::_('grid.sort',  'COM_RESERVACIONES_TURNOS_ESPECIALIDAD', 'especialidad', $listDirn, $listOrder); ?>
 				</th>
-				<th class='left'>
+				<th class='left title-table'>
 				<?php echo JHtml::_('grid.sort',  'COM_RESERVACIONES_TURNOS_NOMBRE', 'doctor', $listDirn, $listOrder); ?>
 				</th>
-				<th class='left'>
+				<th class='left title-table'>
 				<?php echo JHtml::_('grid.sort',  'COM_RESERVACIONES_TURNOS_DIA', 'dia', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
@@ -88,7 +89,9 @@ $canDelete  = $user->authorise('core.delete', 'com_reservaciones');
 				<?php if (isset($this->items[0]->state)) : ?>
 					<?php $class = ($canChange) ? 'active' : 'disabled'; ?>
 					<td class="center">
-						<a class="btn btn-micro <?php echo $class; ?>" href="<?php echo ($canChange) ? JRoute::_('index.php?option=com_reservaciones&task=turno.publish&id=' . $item->id . '&state=' . (($item->state + 1) % 2), false, 2) : '#'; ?>">
+						<a class="btn btn-micro <?php echo $class; ?> hasTooltip" href="<?php echo ($canChange) ? JRoute::_('index.php?option=com_reservaciones&task=turno.publish&id=' . $item->id . '&state=' . (($item->state + 1) % 2), false, 2) : '#'; ?>"
+						data-toggle="tooltip" title="<?php echo ($item->state == 1)? "Inhabilitar":"Habilitar";?>"
+						>
 						<?php if ($item->state == 1): ?>
 							<i class="icon-publish"></i>
 						<?php else: ?>
@@ -125,10 +128,18 @@ $canDelete  = $user->authorise('core.delete', 'com_reservaciones');
 				<?php if ($canEdit || $canDelete): ?>
 					<td class="center">
 						<?php if ($canEdit): ?>
-							<a href="<?php echo JRoute::_('index.php?option=com_reservaciones&task=turnoform.edit&id=' . $item->id, false, 2); ?>" class="btn btn-mini" type="button"><i class="icon-pencil" ></i></a>
+							<a href="<?php echo JRoute::_('index.php?option=com_reservaciones&task=turnoform.edit&id=' . $item->id, false, 2); ?>" class="btn btn-mini hasTooltip" type="button"
+								 data-toggle="tooltip" 
+								
+								 title="Editar"
+							><i class="icon-pencil" ></i></a>
 						<?php endif; ?>
 						<?php if ($canDelete): ?>
-							<a href="<?php echo JRoute::_('index.php?option=com_reservaciones&task=turnoform.remove&id=' . $item->id, false, 2); ?>" class="btn btn-mini delete-button" type="button"><i class="icon-trash" ></i></a>
+							<a href="<?php echo JRoute::_('index.php?option=com_reservaciones&task=turnoform.remove&id=' . $item->id, false, 2); ?>" class="btn btn-mini delete-button hasTooltip" type="button"
+							data-toggle="tooltip" 
+								 
+								 title="Borrar"
+							><i class="icon-trash" ></i></a>
 						<?php endif; ?>
 					</td>
 				<?php endif; ?>
