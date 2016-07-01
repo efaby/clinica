@@ -38,7 +38,13 @@ JHtml::_('behavior.formvalidation');
 
 	});
 	</script>
-	
+<style>
+<!--
+.table {
+	border-collapse: inherit;
+}
+-->
+</style>
 <form action="<?php echo JRoute::_('index.php?option=com_reservaciones&view=clientes'); ?>" method="post"
       name="adminForm" id="adminForm" class="form-validate">
 <div style="border: 1px solid rgb(220, 220, 220); padding: 15px; border-radius: 5px;">
@@ -90,7 +96,8 @@ JHtml::_('behavior.formvalidation');
 		</thead>
 		<tfoot>
 		<tr>
-			<td colspan="<?php echo isset($this->items[0]) ? count(get_object_vars($this->items[0])) : 10; ?>">
+			<td colspan="10">
+				
 				<?php echo $this->pagination->getListFooter(); ?>
 			</td>
 		</tr>
@@ -162,7 +169,7 @@ JHtml::_('behavior.formvalidation');
 						<?php if ($canEdit): ?>
 							<a href="<?php echo JRoute::_('index.php?option=com_reservaciones&task=clienteform.edit&id=' . $item->id, false, 2); ?>" class="btn btn-mini hasTooltip" type="button"
 								data-toggle="tooltip" 
-								
+				t				
 								title="Editar"
 							><i class="icon-pencil" ></i></a>
 						<?php endif; ?>

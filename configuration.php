@@ -7,7 +7,7 @@ class JConfig {
 	public $sitename = 'clinica';
 	public $editor = 'tinymce';
 	public $captcha = '0';
-	public $list_limit = '20';
+	public $list_limit = '10';
 	public $access = '1';
 	public $debug = '0';
 	public $debug_lang = '0';

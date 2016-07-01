@@ -72,7 +72,13 @@ jQuery(function() {
     });
   });
 </script>
-
+<style>
+<!--
+.table {
+	border-collapse: inherit;
+}
+-->
+</style>
 <form action="<?php echo JRoute::_('index.php?option=com_reservaciones&view=reservaciones'); ?>" method="post"
       name="adminForm" id="adminForm" class="form-validate">
 	<div style="border: 1px solid rgb(220, 220, 220); padding: 15px; border-radius: 5px;">
@@ -83,16 +89,16 @@ jQuery(function() {
 		<thead>
 		<tr>						
 				<th class='left title-table'>
-				<?php echo JHtml::_('grid.sort',  'COM_RESERVACIONES_RESERVACIONES_CLIENTE', 'cliente`', $listDirn, $listOrder); ?>
+				<?php echo JText::_('COM_RESERVACIONES_RESERVACIONES_CLIENTE'); ?>
 				</th>
 				<th class='left title-table'>
-				<?php echo JHtml::_('grid.sort',  'COM_RESERVACIONES_RESERVACIONES_DOCTOR', 'doctor', $listDirn, $listOrder); ?>
+				<?php echo JText::_('COM_RESERVACIONES_RESERVACIONES_DOCTOR'); ?>
 				</th>
 				<th class='left title-table'>
-				<?php echo JHtml::_('grid.sort',  'COM_RESERVACIONES_RESERVACIONES_FECHA', 'dia', $listDirn, $listOrder); ?>
+				<?php echo JText::_('COM_RESERVACIONES_RESERVACIONES_FECHA'); ?>
 				</th>
 				<th class='left title-table'>
-				<?php echo JHtml::_('grid.sort',  'COM_RESERVACIONES_RESERVACIONES_ESTADO_TURNO', 'estado', $listDirn, $listOrder); ?>
+				<?php echo JText::_('COM_RESERVACIONES_RESERVACIONES_ESTADO_TURNO'); ?>
 				</th>
 				<th class='center'>
 				<?php echo JText::_('COM_RESERVACIONES_RESERVACIONES_NUMERO_TURNO'); ?>

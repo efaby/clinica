@@ -34,7 +34,7 @@ class ReservacionesViewReservacion extends JViewLegacy
 		$this->state  = $this->get('State');
 		$this->item   = $this->get('Data');
 		$this->params = $app->getParams('com_reservaciones');
-
+		
 		$this->item   = (count($this->item) > 0)?$this->item[0]:array();
 				
 		if (!empty($this->item))

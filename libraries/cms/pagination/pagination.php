@@ -513,6 +513,7 @@ class JPagination
 
 		if (file_exists($chromePath))
 		{
+			
 			$list = array();
 			$list['prefix'] = $this->prefix;
 			$list['limit'] = $this->limit;

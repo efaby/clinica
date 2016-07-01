@@ -51,10 +51,10 @@ class ReservacionesModelReservaciones extends JModelList
 		$search = $app->getUserStateFromRequest($this->context . '.filter.search', 'filter_search');
 		$this->setState('filter.search', $search);
 		
-		$fecha_inicio = $app->getUserStateFromRequest($this->context . '.filter.search.inicio', 'filter_inicio'); 
+		$fecha_inicio = $app->getUserStateFromRequest($this->context . '.filter.search.inicio', 'filter_inicio', date('Y-m-d')); 
 		$this->setState('filter.search.inicio', $fecha_inicio);
 		
-		$fecha_fin = $app->getUserStateFromRequest($this->context . '.filter.search.fin', 'filter_fin'); 
+		$fecha_fin = $app->getUserStateFromRequest($this->context . '.filter.search.fin', 'filter_fin', date('Y-m-d')); 
 		$this->setState('filter.search.fin', $fecha_fin);
 		
 		$doctor = $app->getUserStateFromRequest($this->context . '.filter.doctor', 'filter_doctor'); 

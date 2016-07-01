@@ -105,8 +105,8 @@ $doc->addScript(JUri::base() . '/media/com_reservaciones/js/form.js');
 
 	<?php echo $this->form->renderField('edad'); ?>
 	<?php echo $this->form->renderField('numero_ficha'); ?>
-
-			<input type="hidden" name="jform[state]" value="<?php echo $state_value; ?>" />
+<?php echo $this->form->renderField('state'); ?>
+			
 		<br>
 		<div class="control-group">
 			<div class="controls">

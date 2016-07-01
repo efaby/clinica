@@ -26,6 +26,13 @@ $canChange  = $user->authorise('core.edit.state', 'com_reservaciones');
 $canDelete  = $user->authorise('core.delete', 'com_reservaciones');
 
 ?>
+<style>
+<!--
+.table {
+	border-collapse: inherit;
+}
+-->
+</style>
 <form action="<?php echo JRoute::_('index.php?option=com_reservaciones&view=turnos'); ?>" method="post"
       name="adminForm" id="adminForm">
 <div style="border: 1px solid rgb(220, 220, 220); padding: 15px; border-radius: 5px;">

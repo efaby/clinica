@@ -30,7 +30,16 @@ jQuery(document).ready(function () {
 });
 </script>
 <?php if ($this->item) : ?>
-
+<?php if($this->item->fecha_reservacion != date('Y-m-d')):?>
+<div id="avatar-pos-message">
+	
+	<div class="alert alert-warning">										
+	<h4 class="alert-heading">Atención</h4>
+	
+	<div class="alert-warning">Usted no puede atender este turno porque la fecha de reservación no es hoy.</div>
+	</div>
+	</div>
+	<?php endif;?>
 	<div class="item_fields">
 		<table class="table table-bordered" style="border: 1px solid #ddd">
 <tr><th colspan="2"><?php echo JText::_("COM_RESERVACIONES_MODAL_DETALLE")?></th></tr>
@@ -43,6 +52,7 @@ jQuery(document).ready(function () {
 <?php if($canEdit):?>
 <tr>
 	<td colspan="2">
+	<?php if($this->item->fecha_reservacion == date('Y-m-d')):?>
 	<form id="form-reservacion"
 		  action="<?php echo JRoute::_('index.php?option=com_reservaciones&task=reservacion.save'); ?>"
 		  method="post" class="form-validate form-horizontal" enctype="multipart/form-data">
@@ -81,6 +91,14 @@ jQuery(document).ready(function () {
 			   value="reservacion.save"/>
 		
 	</form>
+	<?php else:?>
+	
+	<a class="btn"
+				   href="<?php echo JRoute::_('index.php?option=com_reservaciones&task=reservacionform.cancel'); ?>"
+				   title="<?php echo JText::_('JCANCEL'); ?>">
+					<?php echo JText::_('JCANCEL'); ?>
+				</a>
+	<?php endif;?>
 	</td>
 </tr>
 <?php endif;?>

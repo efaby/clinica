@@ -16,8 +16,10 @@ defined('_JEXEC') or die;
  */
 class ReservacionesControllerReservacion extends JControllerLegacy
 {
+	
 	public function edit()
 	{
+
 		$app = JFactory::getApplication();
 
 		// Get the previous edit id (if any) and the current edit id.

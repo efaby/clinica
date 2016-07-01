@@ -18,6 +18,7 @@ class ReservacionesControllerReservacionForm extends JControllerForm
 {
 	public function edit($key = NULL, $urlVar = NULL) 
 	{
+
 		$app = JFactory::getApplication();
 
 		// Get the previous edit id (if any) and the current edit id.
