@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
  */
 class ReservacionesControllerTurnoForm extends JControllerForm
 {
-	public function edit()
+	public function edit($key = NULL, $urlVar = NULL)
 	{
 		$app = JFactory::getApplication();
 
@@ -46,7 +46,7 @@ class ReservacionesControllerTurnoForm extends JControllerForm
 		$this->setRedirect(JRoute::_('index.php?option=com_reservaciones&view=turnoform&layout=edit', false));
 	}
 
-	public function save()
+	public function save($key = NULL, $urlVar = NULL)
 	{
 		// Check for request forgeries.
 		JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
@@ -143,7 +143,7 @@ class ReservacionesControllerTurnoForm extends JControllerForm
 		$app->setUserState('com_reservaciones.edit.turno.data', null);
 	}
 
-	public function cancel()
+	public function cancel($key = NULL)
 	{
 		$app = JFactory::getApplication();
 

@@ -64,8 +64,8 @@ $canState = JFactory::getUser()->authorise('core.edit.state','com_reservaciones'
 					        	jQuery("#jform_nombres").val(data.nombre);
 					        	jQuery("#jform_cliente_id").val(data.id);
 					        } else {
-								alert("El cliente no exite por favor registrelo en la sección Clientes");
-								jQuery('#jform_cedula').parent().append("&nbsp; <a href='index.php?option=com_reservaciones&view=clienteform&layout=edit'>Nuevo Cliente</a>");
+								alert("El Paciente no exite por favor registrelo en la sección Pacientes");
+								jQuery('#jform_cedula').parent().append("&nbsp; <a href='index.php?option=com_reservaciones&view=clienteform&layout=edit'>Nuevo Paciente</a>");
 					        }
 				        	
 				        }
@@ -141,7 +141,7 @@ $canState = JFactory::getUser()->authorise('core.edit.state','com_reservaciones'
 
 				<?php if ($this->canSave): ?>
 					<button type="submit" class="validate btn btn-primary" id="boton">
-						<?php echo JText::_('JSUBMIT'); ?>
+						<?php echo JText::_('JSUBMIT1'); ?>
 					</button>
 				<?php endif; ?>
 				<a class="btn"

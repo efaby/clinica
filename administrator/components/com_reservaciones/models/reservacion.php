@@ -104,6 +104,7 @@ class ReservacionesModelReservacion extends JModelAdmin
 		}
 		
 		$list =  $db->loadObjectList();
+		$options = null;
 		foreach ($list as $option) {
 			$options["nombre"] = $option->nombre;
 			$options["id"] = $option->id;

@@ -269,6 +269,7 @@ class ReservacionesModelReservacionForm extends JModelForm
 		}
 	
 		$list =  $db->loadObjectList();
+		$options = null;
 		foreach ($list as $option) {
 			$options["nombre"] = $option->nombre;
 			$options["id"] = $option->id;
@@ -289,6 +290,7 @@ class ReservacionesModelReservacionForm extends JModelForm
 		$diaActual =date('N');
 		$arrayDias =  array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
 		$fecha = date('Y-m-d');
+		$options = null;
 		foreach ($list as $option) {
 			$dias = $option->dia - 1;
 			if($option->dia < $diaActual){

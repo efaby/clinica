@@ -24,7 +24,7 @@ class ReservacionesControllerTurnosForm extends JControllerForm
 	 *
 	 * @since    1.6
 	 */
-	public function edit()
+	public function edit($key = NULL, $urlVar = NULL)
 	{
 		$app = JFactory::getApplication();
 
@@ -62,7 +62,7 @@ class ReservacionesControllerTurnosForm extends JControllerForm
 	 * @throws Exception
 	 * @since  1.6
 	 */
-	public function save()
+	public function save($key = NULL, $urlVar = NULL)
 	{
 		// Check for request forgeries.
 		JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
@@ -157,7 +157,7 @@ class ReservacionesControllerTurnosForm extends JControllerForm
 	 *
 	 * @throws Exception
 	 */
-	public function cancel()
+	public function cancel($key = NULL)
 	{
 		$app = JFactory::getApplication();
 
