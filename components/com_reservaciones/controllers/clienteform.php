@@ -17,7 +17,7 @@ defined('_JEXEC') or die;
 class ReservacionesControllerClienteForm extends JControllerForm
 {
 
-	public function edit()
+	public function edit($key = NULL, $urlVar = NULL)
 	{
 		$app = JFactory::getApplication();
 
@@ -47,7 +47,7 @@ class ReservacionesControllerClienteForm extends JControllerForm
 		$this->setRedirect(JRoute::_('index.php?option=com_reservaciones&view=clienteform&layout=edit', false));
 	}
 
-	public function save()
+	public function save($key = NULL, $urlVar = NULL)
 	{
 		// Check for request forgeries.
 		JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
@@ -109,8 +109,12 @@ class ReservacionesControllerClienteForm extends JControllerForm
 		}
 
 		// Attempt to save the data.
+		$isNew = $data['id'];
+		$data['telefono'] = str_replace('-','',$data['telefono']);
+		$data['celular'] = str_replace('-','',$data['celular']);
+		
 		$return = $model->save($data);
-
+		
 		// Check for errors.
 		if ($return === false)
 		{
@@ -123,6 +127,7 @@ class ReservacionesControllerClienteForm extends JControllerForm
 			$this->setRedirect(JRoute::_('index.php?option=com_reservaciones&view=clienteform&layout=edit&id=' . $id, false));
 		}
 
+		
 		// Check in the profile.
 		if ($return)
 		{
@@ -143,7 +148,7 @@ class ReservacionesControllerClienteForm extends JControllerForm
 		$app->setUserState('com_reservaciones.edit.cliente.data', null);
 	}
 
-	public function cancel()
+	public function cancel($key = NULL)
 	{
 		$app = JFactory::getApplication();
 
@@ -203,8 +208,12 @@ class ReservacionesControllerClienteForm extends JControllerForm
 		}
 
 		// Attempt to save the data.
-		$return = $model->delete($data);
-
+		try {		
+			$return = $model->delete($data);
+		} catch (Exception $e) {
+			$this->setRedirect(JRoute::_('index.php?option=com_reservaciones&task=cliente.publish&id=' . $data['id']. '&state=0', false));
+			return false;
+		}
 		// Check for errors.
 		if ($return === false)
 		{
@@ -214,7 +223,7 @@ class ReservacionesControllerClienteForm extends JControllerForm
 			// Redirect back to the edit screen.
 			$id = (int) $app->getUserState('com_reservaciones.edit.cliente.id');
 			$this->setMessage(JText::sprintf('Delete failed', $model->getError()), 'warning');
-			$this->setRedirect(JRoute::_('index.php?option=com_reservaciones&view=cliente&layout=edit&id=' . $id, false));
+			$this->setRedirect(JRoute::_('index.php?option=com_reservaciones&view=cliente&layout=edit&id=' . $id  , false));
 		}
 
 		// Check in the profile.

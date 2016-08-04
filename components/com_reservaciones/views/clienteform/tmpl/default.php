@@ -22,17 +22,62 @@ $doc->addScript(JUri::base() . '/media/com_reservaciones/js/form.js');
 
 
 ?>
+<script src="<?php echo JUri::root() . 'administrator/components/com_reservaciones/assets/js/jquery.maskedinput.min.js';?>"></script>
 <script type="text/javascript">
 	if (jQuery === 'undefined') {
 		document.addEventListener("DOMContentLoaded", function (event) {
 			jQuery('#form-cliente').submit(function (event) {
 				
 			});
-
+			
 			
 		});
 	} else {
 		jQuery(document).ready(function () {
+			jQuery('#jform_nombres').keypress(function (key) {
+			  if ((key.charCode < 97 || key.charCode > 122)//letras mayusculas
+                && (key.charCode < 65 || key.charCode > 90) //letras minusculas
+                && (key.charCode != 45) //retroceso
+                && (key.charCode != 241) //ñ
+                 && (key.charCode != 209) //Ñ
+                 && (key.charCode != 32) //espacio
+                 && (key.charCode != 225) //á
+                 && (key.charCode != 233) //é
+                 && (key.charCode != 237) //í
+                 && (key.charCode != 243) //ó
+                 && (key.charCode != 250) //ú
+                 && (key.charCode != 193) //Á
+                 && (key.charCode != 201) //É
+                 && (key.charCode != 205) //Í
+                 && (key.charCode != 211) //Ó
+                 && (key.charCode != 218) //Ú
+ 
+                )
+                return false;
+			});
+			jQuery('#jform_apellidos').keypress(function (key) {
+			  if ((key.charCode < 97 || key.charCode > 122)//letras mayusculas
+                && (key.charCode < 65 || key.charCode > 90) //letras minusculas
+                && (key.charCode != 45) //retroceso
+                && (key.charCode != 241) //ñ
+                 && (key.charCode != 209) //Ñ
+                 && (key.charCode != 32) //espacio
+                 && (key.charCode != 225) //á
+                 && (key.charCode != 233) //é
+                 && (key.charCode != 237) //í
+                 && (key.charCode != 243) //ó
+                 && (key.charCode != 250) //ú
+                 && (key.charCode != 193) //Á
+                 && (key.charCode != 201) //É
+                 && (key.charCode != 205) //Í
+                 && (key.charCode != 211) //Ó
+                 && (key.charCode != 218) //Ú
+ 
+                )
+                return false;
+			});
+
+			
 			document.formvalidator.setHandler('nombre', function(value) {
 			      regex=/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
 			      return regex.test(value);
@@ -51,11 +96,11 @@ $doc->addScript(JUri::base() . '/media/com_reservaciones/js/form.js');
 			      return regex.test(value);
 			   });
 			document.formvalidator.setHandler('telefono', function(value) {
-			      regex=/^(?:\+)?\d{9}$/;
+			      regex=/^(?:\+)?\d{2}?[-]?\d{7}$/;
 			      return regex.test(value);
 			   });
 			document.formvalidator.setHandler('celular', function(value) {
-			      regex=/^(?:\+)?\d{10}$/;
+			      regex=/^(?:\+)?\d{2}?[-]?\d{8}$/;
 			      return regex.test(value);
 			   });
 			document.formvalidator.setHandler('edad', function(value) {
@@ -104,7 +149,7 @@ $doc->addScript(JUri::base() . '/media/com_reservaciones/js/form.js');
 	<?php echo $this->form->renderField('celular'); ?>
 
 	<?php echo $this->form->renderField('edad'); ?>
-	<?php echo $this->form->renderField('numero_ficha'); ?>
+
 <?php echo $this->form->renderField('state'); ?>
 			
 		<br>
@@ -130,3 +175,12 @@ $doc->addScript(JUri::base() . '/media/com_reservaciones/js/form.js');
 		<?php echo JHtml::_('form.token'); ?>
 	</form>
 </div>
+
+<script type="text/javascript">
+
+ jQuery(function() {
+	 jQuery("#jform_telefono").mask("99-9999999");
+	jQuery("#jform_celular").mask("99-99999999");
+	
+  });
+</script>

@@ -16,7 +16,7 @@
 			label="COM_RESERVACIONES_FORM_LBL_CLIENTE_FICHA"
 			description="COM_RESERVACIONES_FORM_DESC_CLIENTE_FICHA" 
 			hint="COM_RESERVACIONES_FORM_LBL_CLIENTE_FICHA"
-			required="true" 
+			
 			class="validate-ficha"
 		/> 
 		
@@ -27,6 +27,7 @@
 			hint="COM_RESERVACIONES_FORM_LBL_CLIENTE_CEDULA"
 			required="true" 
 			class="validate-cedula"
+			maxlength="10"
 		/> 
 		
 		<field name="nombres"

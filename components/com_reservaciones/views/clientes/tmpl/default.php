@@ -73,7 +73,7 @@ JHtml::_('behavior.formvalidation');
 				<?php echo JText::_('COM_RESERVACIONES_CLIENTES_DIRECCION'); ?>
 				</th>
 				<th class=''>
-				<?php echo JText::_('COM_RESERVACIONES_CLIENTES_EMAIL'); ?>
+				<?php echo JText::_('COM_RESERVACIONES_MODAL_FICHA'); ?>
 				</th>
 				<th class=''>
 				<?php echo JText::_('COM_RESERVACIONES_CLIENTES_TELEFONO'); ?>
@@ -148,7 +148,7 @@ JHtml::_('behavior.formvalidation');
 				</td>
 				<td>
 
-					<?php echo $item->email; ?>
+					<?php echo "CLIMED-".str_pad($item->id,4,0, STR_PAD_LEFT); ?>
 				</td>
 				<td>
 
