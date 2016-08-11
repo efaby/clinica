@@ -45,8 +45,9 @@ JHtml::_('searchtools.form');
 				<?php endif;?>
 				<input type="text" placeholder="Desde" id="filter_inicio" name="filter_inicio" value="<?php echo $this->escape($this->state->get('filter.search.inicio'));?>" style="width:90px;"  maxlength="8" size="10" class="validate-fecha">				
 				<input type="text" placeholder="Hasta" id="filter_fin" name="filter_fin" value="<?php echo $this->escape($this->state->get('filter.search.fin'));?>" style="width:90px;"  maxlength="8" size="10" class="validate-fecha">	   
-				<button type="submit" class="btn hasTooltip validate" title=""
-					data-original-title="<?php echo JText::_('COM_RESERVACIONES_SEARCH_FILTER_SUBMIT'); ?>">
+				<button type="button" class="btn hasTooltip validate" title=""
+					data-original-title="<?php echo JText::_('COM_RESERVACIONES_SEARCH_FILTER_SUBMIT'); ?>"
+					id="buscar-search-button">
 					<i class="icon-search"></i>
 				</button>
 			</div>
@@ -57,6 +58,13 @@ JHtml::_('searchtools.form');
 					id="clear-search-button">
 					<i class="icon-remove"></i>
 				</button>
+				
+				<button type="button" class="btn hasTooltip js-stools-btn-export" title=""
+					data-original-title="Exportar"
+					id="export-search-button">
+					<i class="icon-download"></i>
+				</button>
+				
 			</div>
 		</div>
 	</div>

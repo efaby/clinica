@@ -38,9 +38,20 @@ jQuery(document).ready(function () {
 		jQuery('#filter_inicio').val('');
 		jQuery('#filter_fin').val('');
 		jQuery("#filter_doctor option[value='']").attr("selected", "selected");
+		jQuery('#adminForm').attr('action', '<?php echo JRoute::_('index.php?option=com_reservaciones&view=reservaciones'); ?>');
 		jQuery('#adminForm').submit();
 	});
 
+	jQuery('#export-search-button').on('click', function () {
+		jQuery('#adminForm').attr('action', '<?php echo JRoute::_('index.php?option=com_reservaciones&view=reservaciones')."?&format=pdf&tmpl=component"; ?>');
+		jQuery('#adminForm').submit();
+	});
+
+	jQuery('#buscar-search-button').on('click', function () {
+		jQuery('#adminForm').attr('action', '<?php echo JRoute::_('index.php?option=com_reservaciones&view=reservaciones'); ?>');
+		jQuery('#adminForm').submit();
+	});
+	
 	document.formvalidator.setHandler('nombre', function(value) {
 	      regex=/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
 	      return regex.test(value);
