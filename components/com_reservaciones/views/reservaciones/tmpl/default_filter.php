@@ -71,4 +71,3 @@ JHtml::_('searchtools.form');
 	
 </div>
 
-

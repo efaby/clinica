@@ -43,7 +43,7 @@ jQuery(document).ready(function () {
 	});
 
 	jQuery('#export-search-button').on('click', function () {
-		jQuery('#adminForm').attr('action', '<?php echo JRoute::_('index.php?option=com_reservaciones&view=reservaciones')."?&format=pdf&tmpl=component"; ?>');
+		jQuery('#adminForm').attr('action', '<?php echo JRoute::_('index.php?option=com_reservaciones&view=reservaciones')."?&format=pdf&tmpl=component&limit=1000"; ?>');
 		jQuery('#adminForm').submit();
 	});
 
@@ -275,5 +275,4 @@ jQuery(function() {
 	}
 </script>
 <?php endif; ?>
-
 

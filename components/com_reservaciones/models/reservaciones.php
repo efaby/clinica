@@ -42,10 +42,10 @@ class ReservacionesModelReservaciones extends JModelList
 		$app = JFactory::getApplication();
 
 		// List state information
-		$limit = $app->getUserStateFromRequest('global.list.limit', 'limit', $app->get('list_limit'));
+		$limit = $app->getUserStateFromRequest($this->context . 'list.limit', 'limit', $app->get('list_limit'));
 		$this->setState('list.limit', $limit);
 
-		$limitstart = $app->getUserStateFromRequest('limitstart', 'limitstart', 0);
+		$limitstart = $app->getUserStateFromRequest($this->context . 'limitstart', 'limitstart', 0);
 		$this->setState('list.start', $limitstart);
 		
 		$search = $app->getUserStateFromRequest($this->context . '.filter.search', 'filter_search');
@@ -216,7 +216,7 @@ class ReservacionesModelReservaciones extends JModelList
 			else
 			{
 				$search = $db->Quote('%' . $db->escape($search, true) . '%');
-				$query->where('cliente like ' .$search);
+				$query->where('CONCAT( c.nombres, " ", c.apellidos) like ' .$search);
 			}
 		}
 		$fecha_inicio =  $this->getState('filter.search.inicio');
